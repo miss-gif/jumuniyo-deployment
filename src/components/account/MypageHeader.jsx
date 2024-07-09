@@ -23,7 +23,7 @@ NavButton.propTypes = {
   label: PropTypes.string.isRequired,
 };
 
-const Mypage = () => {
+const MypageHeader = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -35,8 +35,8 @@ const Mypage = () => {
   ];
 
   return (
-    <div className="mypage-select">
-      <div className="mypage-select-list">
+    <div className="mypage-header">
+      <div className="mypage-header-list">
         {navItems.map(({ path, label }) => (
           <NavButton
             key={path}
@@ -50,4 +50,4 @@ const Mypage = () => {
   );
 };
 
-export default Mypage;
+export default MypageHeader;

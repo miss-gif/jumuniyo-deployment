@@ -1,8 +1,8 @@
-.mypage-wrap {
+.mypage-layout {
   display: flex;
 }
 
-.mypage-select-list {
+.mypage-header-list {
   display: flex;
   flex-direction: column;
   border-top: 1px solid #dbdbdb;
@@ -10,7 +10,7 @@
   border-bottom: 1px solid #dbdbdb;
 }
 
-.mypage-select {
+.mypage-header {
   & button {
     border-bottom: 1px solid #dbdbdb;
     width: 120px;
@@ -33,7 +33,7 @@
     flex-direction: column;
   }
 
-  .mypage-select-list {
+  .mypage-header-list {
     flex-direction: row;
     border-bottom: 0;
 
