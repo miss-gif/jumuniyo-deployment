@@ -1,0 +1,25 @@
+.restaurant-detail-page {
+  display: flex;
+  gap: $gap-3;
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-3;
+    width: 65%;
+  }
+  &__right {
+    width: 35%;
+  }
+}
+
+@include tablet {
+  .restaurant-detail-page {
+    flex-direction: column;
+    &__left {
+      width: 100%;
+    }
+    &__right {
+      width: 100%;
+    }
+  }
+}

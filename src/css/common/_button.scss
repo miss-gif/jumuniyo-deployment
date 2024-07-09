@@ -1,0 +1,25 @@
+.btn-base {
+  padding: $padding-2 $padding-3;
+  border-radius: $border-radius-1;
+  font-size: 14px;
+}
+
+// 수정해야하는 코드인데 이미 너무 많이 사용하고 있음
+.btn {
+  @extend .btn-base;
+  color: $white;
+  background-color: $black;
+}
+
+.btn--active {
+  @extend .btn-base;
+  color: $white;
+  background-color: $black;
+}
+
+.btn--default {
+  @extend .btn-base;
+  color: $black;
+  background-color: $white;
+  border: 1px solid $borderColor;
+}

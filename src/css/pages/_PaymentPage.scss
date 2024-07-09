@@ -1,0 +1,188 @@
+// 결제하기
+.payment-page {
+  display: flex;
+  gap: $gap-3;
+  &__section {
+    width: 65%;
+  }
+
+  &__title {
+    color: $white;
+    background-color: $black;
+    padding: $padding-2;
+    font-weight: 500;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    background-color: $gray;
+    padding: $padding-2;
+  }
+
+  &__delivery-info {
+    padding: $padding-4 0;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-1;
+    div {
+      display: flex;
+      padding: 0 $padding-2;
+      label {
+        display: flex;
+        align-items: center;
+        max-width: $width;
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+      }
+      input {
+        font-size: 14px;
+        width: 100%;
+        padding: $padding-1 $padding-2;
+        border: 1px solid $borderColor;
+      }
+      &:nth-child(2) {
+        margin-bottom: calc($gap-1 * 2);
+      }
+    }
+  }
+
+  &__request {
+    padding: $padding-4 $padding-2;
+    width: 100%;
+    textarea {
+      width: 100%;
+      max-height: 500px;
+      padding: $padding-2;
+      border: 1px solid $borderColor;
+      resize: none;
+      font-size: 14px;
+    }
+  }
+  &__payment-method {
+    display: flex;
+    padding: $padding-4 $padding-2;
+    flex-direction: column;
+    gap: $gap-4;
+  }
+
+  &__mobile-payment,
+  &__onsite-payment {
+    display: flex;
+    gap: $gap-2;
+  }
+  &__button {
+    width: 50%;
+  }
+
+  &__coupon {
+    padding: $padding-4 $padding-2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label {
+      max-width: $width;
+      width: 100%;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+
+  &__coupon-wrap {
+    display: flex;
+    gap: $gap-2;
+    width: 100%;
+    input {
+      width: 100%;
+      border: 1px solid $borderColor;
+    }
+  }
+}
+
+// 주문내역
+.payment-page {
+  &__order-summary {
+    width: 35%;
+    border-radius: $border-radius-1;
+    ul {
+      border-bottom: 1px solid $borderColor;
+    }
+  }
+
+  &__restaurant-name {
+    padding: $padding-2;
+    font-size: 14px;
+    border-bottom: 1px solid $borderColor;
+    background-color: $gray;
+  }
+
+  &__order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-4 $padding-2;
+    p {
+      font-size: 14px;
+    }
+  }
+
+  &__total-amount {
+    padding: $padding-2;
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 16px;
+      font-weight: $medium;
+    }
+  }
+  &__terms {
+    padding: $padding-3;
+    line-height: 1.8;
+    span {
+      text-decoration: underline;
+    }
+  }
+  &__button {
+    width: 100%;
+    padding: $padding-3;
+    border: 1px solid $borderColor;
+  }
+}
+
+.payment-page__warp-border {
+  border-bottom: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+}
+
+.payment-wrap {
+  h4 {
+    margin-bottom: 4px;
+  }
+  span {
+    color: $textGray;
+    font-size: 12px;
+    padding: 0 $padding-1;
+  }
+}
+
+@include tablet {
+  // 결제하기
+  .payment-page {
+    flex-direction: column;
+  }
+  .payment-page__section {
+    width: 100%;
+  }
+  .payment-page__order-summary {
+    width: 100%;
+  }
+}

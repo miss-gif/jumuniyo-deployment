@@ -1,0 +1,95 @@
+.footer {
+  margin-bottom: 40px;
+  p {
+    font-size: 12px;
+  }
+}
+
+// 프로젝트 info 영역
+.footer__menu {
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  margin-bottom: 30px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__item {
+    font-size: 14px;
+    a {
+      display: block;
+      position: relative;
+      padding: $padding-3;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: $padding-3;
+        background-color: $borderColor;
+        top: 0;
+        bottom: 0;
+        right: -1px;
+        margin: auto;
+      }
+    }
+    &:nth-child(1) {
+      font-weight: $medium;
+    }
+    &:last-child a::before {
+      width: 0;
+    }
+  }
+}
+
+// 푸터 내용
+.footer {
+  &__wrap {
+    display: flex;
+    gap: $gap-6;
+  }
+
+  &__logo {
+    opacity: 0.5;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-3;
+  }
+}
+
+.company-info__text {
+  display: flex;
+  flex-wrap: wrap;
+  p {
+    margin-right: 10px;
+  }
+}
+
+.logo-wrap {
+  min-width: 100px;
+  height: 100%;
+}
+
+.service-info {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: $gap-3;
+  span {
+    font-size: 1.125rem;
+    font-weight: $bold;
+  }
+}
+
+@include tablet {
+  .logo-wrap {
+    display: none;
+  }
+  .footer__menu__item {
+    a {
+      padding: $padding-2;
+    }
+  }
+}

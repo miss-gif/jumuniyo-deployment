@@ -1,0 +1,23 @@
+.to-top {
+  width: 2.625rem;
+  height: 2.625rem;
+  background-color: $black;
+  color: #fff;
+  border: 2px solid $white;
+  border-radius: $border-radius-2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1.875rem;
+  right: 1.875rem;
+  z-index: 9;
+  box-shadow: $shadow-1;
+}
+
+@include tablet {
+  .to-top {
+    display: none;
+  }
+}

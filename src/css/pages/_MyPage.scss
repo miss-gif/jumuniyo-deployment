@@ -1,0 +1,67 @@
+.mypage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  &-inner {
+    width: 80%;
+  }
+  &__profile {
+    margin-bottom: 16px;
+    &-header {
+      gap: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-title {
+    }
+    &-image {
+      max-height: 500px;
+      height: 50%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &-item {
+      display: flex;
+      align-items: center;
+    }
+    &-label {
+      max-width: 120px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    &-value {
+      font-size: 16px;
+      padding: 8px;
+      // padding: 8px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    background-color: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    &:hover {
+      background-color: #666;
+    }
+  }
+}
+
+.mypage__info-input {
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+  padding: 8px;
+}

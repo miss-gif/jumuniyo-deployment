@@ -1,0 +1,31 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.section-carousel {
+  position: relative;
+  padding: $padding-4 0;
+  border-radius: $border-radius-2;
+  // overflow: hidden;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -2%;
+    width: 104%;
+    height: 100%;
+    background-color: rgba($color: $gray-100, $alpha: 0.8);
+    border-radius: $border-radius-2;
+    z-index: -1;
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.section__title {
+  font-weight: $bold;
+  padding-bottom: $padding-2;
+}

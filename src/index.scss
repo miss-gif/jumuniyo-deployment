@@ -1,0 +1,81 @@
+// abstracts: 추상적인 개념 (변수, 믹스인)
+@import "./css/abstracts/variables.scss";
+@import "./css/abstracts/colors.scss";
+@import "./css/abstracts/mixins.scss";
+
+// base: 기본 스타일 (reset, typography)
+@import "./css/base/reset.scss";
+@import "./css/base/breakPoint";
+@import "./css/base/typography.scss";
+
+// common: 공통 스타일
+@import "./css/common/common.scss";
+@import "./css/common/button.scss";
+@import "./css/common/LocationSearch.scss";
+@import "./css/common/RestaurantsFilters.scss";
+@import "./css/common/Review.scss";
+@import "./css/common/OwnerComment.scss";
+
+// layout: 레이아웃 관련 스타일
+@import "./css/layout/RootLayout.scss";
+@import "./css/layout/Header.scss";
+@import "./css/layout/Footer.scss";
+@import "./css/layout/MyPageLayout.scss";
+
+// components: 컴포넌트 스타일
+@import "./css/components/ToTop.scss";
+@import "./css/components/NewRestaurantListCarousel.scss";
+
+// pages: 페이지 스타일
+@import "./css/pages/CeoPage.scss";
+@import "./css/pages/ProjectInfo.scss";
+
+/**
+  페이지 및 컴포넌트 구분
+*/
+
+// HomePage CSS miss-gif
+@import "./css/pages/HomePage.scss";
+@import "./css/components/CategoryNavigation.scss";
+@import "./css/components/SwiperSlideComponent.scss";
+
+// RestaurantsPage CSS CSS miss-gif
+@import "./css/pages/RestaurantsPage.scss";
+
+// RestaurantDetailPage CSS miss-gif
+@import "./css/pages/RestaurantDetailPage.scss";
+@import "./css/components/user/RestaurantDetailPage/RestaurantDetailInfo.scss";
+@import "./css/components/user/RestaurantDetailPage/RestaurantDetailHeader.scss";
+@import "./css/components/user/RestaurantDetailPage/RestaurantDetailMenuContent.scss";
+@import "./css/components/user/RestaurantDetailPage/RestaurantDetailCarousel.scss";
+@import "./css/components/user/RestaurantDetailPage/RestaurantDetailCleanReview.scss";
+@import "./css/components/user/RestaurantDetailPage/RestaurantDetailTabInfo.scss";
+@import "./css/components/user/RestaurantDetailPage/OrderSummary.scss";
+
+// PaymentPage CSS miss-gif
+@import "./css/pages/PaymentPage.scss";
+
+// MyPageOrderPage CSS miss-gif
+@import "./css/pages/MyPageOrderPage.scss";
+
+// 김민기 작업 css
+@import "./css/join/joinmain";
+@import "./css//join/joinuser";
+@import "./css//join/joinceo";
+@import "./css/join/JoinFooter";
+@import "./css/pages/MyPage";
+@import "./css/pages/MyPageOrderPagee";
+@import "./css/pages/LogInPage";
+@import "./css/pages/MypageReviewPage";
+
+//gmu 작업 css
+@import "./css/components/Menu";
+@import "./css/components/ModalForMenu";
+@import "./css/components/ceo/AddMenuModal";
+@import "./css/components/ceo/Reviews";
+@import "./css/components/ceo/statistics";
+@import "./css/components/ceo/storeManagement";
+@import "./css/components/ceo/MenuManagement";
+@import "./css/components/ceo/Orders";
+@import "./css/components/ceo/CeoLayout";
+@import "./css/components/ceo/Home";
