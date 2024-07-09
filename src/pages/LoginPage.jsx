@@ -4,16 +4,6 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="login">
-      <div>
-        <h1>
-          <Link to="/">
-            <img
-              src={process.env.PUBLIC_URL + "/images/logo_1x.png"}
-              alt="Logo"
-            />
-          </Link>
-        </h1>
-      </div>
       <h2 className="login__title">로그인</h2>
       <form className="login__form">
         <div className="login__form-group">
@@ -57,9 +47,9 @@ const Login = () => {
         </button>
       </form>
       <div className="login__links">
-        <a className="login__link" href="/signup">
+        <Link className="login__link" to="/auth">
           회원가입
-        </a>
+        </Link>
         <a className="login__link" href="/forgot-id">
           아이디 찾기
         </a>

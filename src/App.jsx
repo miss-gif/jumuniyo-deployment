@@ -9,8 +9,6 @@ import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
 import AdminPage from "./pages/AdminPage";
 import AuthCeoPage from "./pages/AuthCeoPage.jsx";
-import AuthPage from "./pages/AuthPage.jsx";
-import AuthUserPage from "./pages/AuthUserPage.jsx";
 import CeoPage from "./pages/CeoPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
@@ -29,6 +27,9 @@ import Test from "./pages/Test";
 import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
 import MyPageLayout from "./components/layout/MyPageLayout";
+import SignupChoice from "./pages/SignupChoice";
+import AccountLayout from "./components/layout/AccountLayout";
+import UserSignupPage from "./pages/UserSignupPage.jsx";
 
 // 사업자
 
@@ -37,12 +38,12 @@ function App() {
     <>
       <div className="root-wrap">
         <Routes>
-          {/* 로그인 */}
-          <Route path="/login" element={<LoginPage />} />
-
-          {/* 회원가입 */}
-          <Route path="/auth" element={<AuthPage />}>
-            <Route path="/auth/user" element={<AuthUserPage />} />
+          <Route path="/" element={<AccountLayout />}>
+            {/* 로그인 */}
+            <Route path="/login" element={<LoginPage />} />
+            {/* 회원가입 */}
+            <Route path="/auth" element={<SignupChoice />} />
+            <Route path="/auth/user" element={<UserSignupPage />} />
             <Route path="/auth/ceo" element={<AuthCeoPage />} />
           </Route>
 
