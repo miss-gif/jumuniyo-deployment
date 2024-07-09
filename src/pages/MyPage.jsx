@@ -1,8 +1,6 @@
 import { useState } from "react";
-import MypageModifyModal from "../components/common/mypage/MypageModifyModal";
 
 const MyPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState({
     아이디: "",
@@ -11,10 +9,6 @@ const MyPage = () => {
     닉네임: "",
     연락처: "",
   });
-
-  const onModify = () => {
-    setIsModalOpen(true);
-  };
 
   const onEdit = () => {
     setIsEditing(!isEditing);
@@ -59,7 +53,6 @@ const MyPage = () => {
             {isEditing ? "저장" : "수정"}
           </button>
         </div>
-        {isModalOpen ? <MypageModifyModal /> : onModify}
       </div>
     </div>
   );
