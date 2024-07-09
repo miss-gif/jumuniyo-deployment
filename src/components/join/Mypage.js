@@ -28,10 +28,10 @@ const Mypage = () => {
   const currentPath = location.pathname;
 
   const navItems = [
-    { path: "/mypage", label: "내정보" },
-    { path: "/mypage/address", label: "내주소" },
+    { path: "/mypage", label: "개인정보" },
+    { path: "/mypage/address", label: "주소관리" },
     { path: "/mypage/order", label: "주문내역" },
-    { path: "/mypage/review", label: "리뷰내역" },
+    { path: "/mypage/review", label: "리뷰관리" },
     { path: "/mypage/withdrawal", label: "회원탈퇴" },
   ];
 

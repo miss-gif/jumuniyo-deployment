@@ -1,5 +1,13 @@
 import { Route, Routes } from "react-router-dom";
+import MenuManagement from "./components/ceo/MenuManagement";
+import Orders from "./components/ceo/Orders";
+import Reviews from "./components/ceo/Reviews";
+import Statistics from "./components/ceo/Statistics";
+import StoreManagement from "./components/ceo/StoreManagement";
+import AdminLayout from "./components/layout/AdminLayout";
+import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
+import AdminPage from "./pages/AdminPage";
 import AuthCeoPage from "./pages/AuthCeoPage.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import AuthUserPage from "./pages/AuthUserPage.jsx";
@@ -7,29 +15,20 @@ import CeoPage from "./pages/CeoPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import MyPage from "./pages/MyPage.jsx";
+import MyPageAddress from "./pages/MyPageAddress";
+import MyPageOrderListPage from "./pages/MyPageOrderListPage.jsx";
 import MyPageOrderPage from "./pages/MyPageOrderPage.jsx";
+import MyPageReviewPage from "./pages/MyPageReviewPage";
+import MypageUserWithdrawal from "./pages/MypageUserWithdrawal";
 import NotFound from "./pages/NotFound.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import ProjectInfo from "./pages/ProjectInfo.jsx";
 import RestaurantDetailPage from "./pages/RestaurantDetailPage.jsx";
 import RestaurantsPage from "./pages/RestaurantsPage.jsx";
 import Test from "./pages/Test";
-import MyPageOrderListPage from "./pages/MyPageOrderListPage.jsx";
-import MyPageReviewPage from "./pages/MyPageReviewPage";
-import AdminPage from "./pages/AdminPage";
-import CeoLayout from "./components/layout/CeoLayout";
-import Reviews from "./components/ceo/Reviews";
-import Orders from "./components/ceo/Orders";
-import MenuManagement from "./components/ceo/MenuManagement";
-import StoreManagement from "./components/ceo/StoreManagement";
-import Statistics from "./components/ceo/Statistics";
-import AdminLayout from "./components/layout/AdminLayout";
-import MyPageAddress from "./pages/MyPageAddress";
-import MypageUserWithdrawal from "./pages/MypageUserWithdrawal";
 
 import RestaurantDetailPage2 from "./pages/user/RestaurantDetailPage2";
 
-import Home from "./components/ceo/Home";
 import MyPageLayout from "./components/layout/MyPageLayout";
 
 // 사업자
@@ -43,9 +42,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
 
           {/* 회원가입 */}
-          <Route path="/auth" element={<AuthPage />} />
-          <Route path="/auth/user" element={<AuthUserPage />} />
-          <Route path="/auth/ceo" element={<AuthCeoPage />} />
+          <Route path="/auth" element={<AuthPage />}>
+            <Route path="/auth/user" element={<AuthUserPage />} />
+            <Route path="/auth/ceo" element={<AuthCeoPage />} />
+          </Route>
 
           {/* 유저 */}
           <Route path="/" element={<RootLayout />}>
@@ -73,8 +73,6 @@ function App() {
           {/* 사업자 라우터 */}
           <Route path="/ceopage" element={<CeoLayout />}>
             <Route path="/ceopage/" element={<CeoPage />} />
-            <Route path="/ceopage/" element={<Home />} />
-            <Route path="home" element={<Home />} />
             <Route path="orders" element={<Orders />} />
             <Route path="menu-management" element={<MenuManagement />} />
             <Route path="reviews" element={<Reviews />} />

@@ -5,11 +5,11 @@ const MyPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState({
-    아이디: "tource",
-    비밀번호: "tource",
-    이름: "김민기",
-    닉네임: "밍밍밍",
-    연락처: "010-1234-5678",
+    아이디: "",
+    비밀번호: "",
+    이름: "",
+    닉네임: "",
+    연락처: "",
   });
 
   const onModify = () => {
@@ -33,12 +33,7 @@ const MyPage = () => {
       <div className="mypage-inner">
         <div className="mypage__profile">
           <div className="mypage__profile-header">
-            <h2 className="mypage__profile-title">프로필 사진</h2>
-            <img
-              className="mypage__profile-image"
-              src={process.env.PUBLIC_URL + "/images/logo_1x.png"}
-              alt="profile-img"
-            />
+            <h2 className="mypage__profile-title">개인정보 변경</h2>
           </div>
         </div>
         <div className="mypage__info">
