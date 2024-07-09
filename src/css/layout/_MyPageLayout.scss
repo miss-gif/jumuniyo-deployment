@@ -1,17 +1,19 @@
 .mypage-wrap {
   display: flex;
-  gap: 12px;
 }
 
 .mypage-select-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .mypage-select {
   & button {
     border-bottom: 1px solid #dbdbdb;
+    width: 120px;
     padding: 16px 20px;
     transition: all 0.3s;
     &:last-child {
