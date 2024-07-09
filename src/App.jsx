@@ -26,7 +26,7 @@ import ProjectInfo from "./pages/ProjectInfo.jsx";
 import RestaurantsPage from "./pages/RestaurantsPage.jsx";
 import Test from "./pages/Test";
 
-import RestaurantDetailPage from "./pages/user/RestaurantDetailPage";
+import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
 import MyPageLayout from "./components/layout/MyPageLayout";
 
