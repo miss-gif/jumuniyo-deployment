@@ -23,11 +23,10 @@ import MypageUserWithdrawal from "./pages/MypageUserWithdrawal";
 import NotFound from "./pages/NotFound.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import ProjectInfo from "./pages/ProjectInfo.jsx";
-import RestaurantDetailPage from "./pages/RestaurantDetailPage.jsx";
 import RestaurantsPage from "./pages/RestaurantsPage.jsx";
 import Test from "./pages/Test";
 
-import RestaurantDetailPage2 from "./pages/user/RestaurantDetailPage2";
+import RestaurantDetailPage from "./pages/user/RestaurantDetailPage";
 
 import MyPageLayout from "./components/layout/MyPageLayout";
 
@@ -51,8 +50,7 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route index element={<HomePage />} />
             <Route path="/restaurants" element={<RestaurantsPage />} />
-            <Route path="/restaurants/:id" element={<RestaurantDetailPage />} />
-            <Route path="/restaurants/re" element={<RestaurantDetailPage2 />} />
+            <Route path="/restaurants/re" element={<RestaurantDetailPage />} />
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projectinfo" element={<ProjectInfo />} />
             <Route path="/orderview" element={<MyPageOrderPage />} />
