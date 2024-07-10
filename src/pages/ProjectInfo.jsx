@@ -80,8 +80,6 @@ const ProjectPage = () => (
       <h2>기술 스택</h2>
       <h3>프론트엔드</h3>
       <p>React, TypeScript, React Router DOM, Axios</p>
-      <h3>백엔드</h3>
-      <p>Node.js, Express, MongoDB, PostgreSQL</p> {/* 백엔드 기술 스택 추가 */}
     </section>
 
     <section className="project-section">
@@ -110,11 +108,7 @@ const ProjectPage = () => (
 
     <section className="project-section">
       <h2>역할 분담</h2>
-      <p>
-        프론트엔드 팀: 곽도억, 김민기, 권민욱
-        <br />
-        백엔드 팀: 이민역, 공영빈, 김동현, 이하늘, 정형우
-      </p>
+      <p></p>
     </section>
 
     <section className="project-section">

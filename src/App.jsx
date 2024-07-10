@@ -8,26 +8,26 @@ import AdminLayout from "./components/layout/AdminLayout";
 import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
 import AdminPage from "./pages/AdminPage";
-import AuthCeoPage from "./pages/AuthCeoPage.jsx";
-import CeoPage from "./pages/CeoPage.jsx";
-import HomePage from "./pages/HomePage.jsx";
-import LoginPage from "./pages/LoginPage.jsx";
-import MyPage from "./pages/mypage/MyPageProfile.jsx";
+import AuthCeoPage from "./pages/AuthCeoPage";
+import CeoPage from "./pages/CeoPage";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import MyPage from "./pages/mypage/MyPageProfile";
 import MyPageAddress from "./pages/mypage/MyPageAddress";
-import MyPageOrderListPage from "./pages/mypage/MyPageOrderListPage.jsx";
-import MyPageOrderPage from "./pages/mypage/MyPageOrderPage.jsx";
+import MyPageOrderListPage from "./pages/mypage/MyPageOrderListPage";
+import MyPageOrderPage from "./pages/mypage/MyPageOrderPage";
 import MyPageReviewPage from "./pages/mypage/MyPageReviewPage";
-import NotFound from "./pages/NotFound.jsx";
-import PaymentPage from "./pages/PaymentPage.jsx";
-import ProjectInfo from "./pages/ProjectInfo.jsx";
-import RestaurantsPage from "./pages/RestaurantsPage.jsx";
+import NotFound from "./pages/NotFound";
+import PaymentPage from "./pages/PaymentPage";
+import ProjectInfo from "./pages/ProjectInfo";
+import RestaurantsPage from "./pages/RestaurantsPage";
 import Test from "./pages/Test";
 
 import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
 import SignupChoice from "./pages/SignupChoice";
 import AccountLayout from "./components/layout/AccountLayout";
-import UserSignupPage from "./pages/UserSignupPage.jsx";
+import UserSignupPage from "./pages/UserSignupPage";
 import MyPageLayout from "./pages/mypage/MyPageLayout";
 
 // 사업자
