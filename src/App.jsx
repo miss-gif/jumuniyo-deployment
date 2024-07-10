@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import MenuManagement from "./components/ceo/MenuManagement";
-import Orders from "./components/ceo/Orders";
-import Reviews from "./components/ceo/Reviews";
-import Statistics from "./components/ceo/Statistics";
-import StoreManagement from "./components/ceo/StoreManagement";
+import MenuManagement from "./pages/ownerPage/MenuManagement";
+import Orders from "./pages/ownerPage/Orders";
+import Reviews from "./pages/ownerPage/Reviews";
+import Statistics from "./pages/ownerPage/Statistics";
+import StoreManagement from "./pages/ownerPage/StoreManagement";
 import AdminLayout from "./components/layout/AdminLayout";
 import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";

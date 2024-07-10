@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import SwiperSlideComponent from "../common/SwiperSlideComponent";
+import SwiperSlideComponent from "../../components/common/SwiperSlideComponent";
 import carouselDummy from "../../json/user/carouselDummy.json";
 import PropTypes from "prop-types";
 
-const NewRestaurantListCarousel = () => {
+const RecentOrderCarousel = () => {
   const [data, setData] = useState([]);
   const swiperRef = useRef(null);
 
@@ -48,12 +48,7 @@ const NewRestaurantListCarousel = () => {
 
   return (
     <div>
-      <swiper-container
-        ref={swiperRef}
-        init="false"
-        navigation="true"
-        className="swiper-container"
-      >
+      <swiper-container ref={swiperRef} init="false" navigation="true">
         {data.map(restaurant => (
           <SwiperSlideComponent
             key={restaurant.id}
@@ -68,7 +63,7 @@ const NewRestaurantListCarousel = () => {
   );
 };
 
-NewRestaurantListCarousel.propTypes = {
+RecentOrderCarousel.propTypes = {
   carouselDummy: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -80,4 +75,4 @@ NewRestaurantListCarousel.propTypes = {
   ),
 };
 
-export default NewRestaurantListCarousel;
+export default RecentOrderCarousel;

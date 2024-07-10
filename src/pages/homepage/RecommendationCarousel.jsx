@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import SwiperSlideComponent from "../common/SwiperSlideComponent";
+import SwiperSlideComponent from "../../components/common/SwiperSlideComponent";
 import carouselDummy from "../../json/user/carouselDummy.json";
 import PropTypes from "prop-types";
 
-const RecentOrderCarousel = () => {
+const RecommendationCarousel = () => {
   const [data, setData] = useState([]);
   const swiperRef = useRef(null);
 
@@ -63,7 +63,7 @@ const RecentOrderCarousel = () => {
   );
 };
 
-RecentOrderCarousel.propTypes = {
+RecommendationCarousel.propTypes = {
   carouselDummy: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -75,4 +75,4 @@ RecentOrderCarousel.propTypes = {
   ),
 };
 
-export default RecentOrderCarousel;
+export default RecommendationCarousel;
