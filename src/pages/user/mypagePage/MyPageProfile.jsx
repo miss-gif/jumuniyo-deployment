@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const MyPage = () => {
+const MyPageProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState({
     아이디: "",
@@ -58,4 +58,4 @@ const MyPage = () => {
   );
 };
 
-export default MyPage;
+export default MyPageProfile;

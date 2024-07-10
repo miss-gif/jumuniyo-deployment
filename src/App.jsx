@@ -31,9 +31,13 @@ import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDe
 import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
 import MyPageOrderPage from "./pages/user/mypagePage/MyPageOrderPage";
 import MyPageLayout from "./pages/user/mypagePage/MyPageLayout";
-import MyPage from "./pages/user/mypagePage/MyPageProfile";
 import MyPageReviewPage from "./pages/user/mypagePage/MyPageReviewPage";
-import MyPageAddress from "./pages/user/mypagePage/MyPageAddress";
+import MyPageProfile from "./pages/user/mypagePage/MyPageProfile";
+import MyPage from "./pages/user/mypagePage/MyPage";
+import MyPageAddrList from "./pages/user/mypagePage/MyPageAddress";
+import MyPageCardList from "./pages/user/mypagePage/MyPageCardList";
+import MyPageInquiryList from "./pages/user/mypagePage/MyPageInquiryList";
+import MyPageHelp from "./pages/user/mypagePage/MyPageHelp";
 
 // 사업자
 
@@ -54,17 +58,27 @@ function App() {
           <Route path="/" element={<RootLayout />}>
             <Route index element={<HomePage />} />
             <Route path="/restaurants" element={<RestaurantsPage />} />
-            <Route path="/restaurants/re" element={<RestaurantDetailPage />} />
+            <Route path="/restaurants/:id" element={<RestaurantDetailPage />} />
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projectinfo" element={<ProjectInfo />} />
             <Route path="/orderview" element={<MyPageOrderPage />} />
             {/* 마이페이지 */}
             <Route path="/" element={<MyPageLayout />}>
               <Route path="/mypage" element={<MyPage />} />
-              <Route path="/mypage/order" element={<MyPageOrderListPage />} />
+              <Route path="/mypage/edit" element={<MyPageProfile />} />
+              <Route
+                path="/mypage/orderlist"
+                element={<MyPageOrderListPage />}
+              />
               <Route path="/mypage/order/:id" element={<MyPageOrderPage />} />
-              <Route path="/mypage/review" element={<MyPageReviewPage />} />
-              <Route path="/mypage/address" element={<MyPageAddress />} />
+              <Route path="/mypage/reviewlist" element={<MyPageReviewPage />} />
+              <Route path="/mypage/addrlist" element={<MyPageAddrList />} />
+              <Route path="/mypage/cardlist" element={<MyPageCardList />} />
+              <Route
+                path="/mypage/inquirylist"
+                element={<MyPageInquiryList />}
+              />
+              <Route path="/mypage/help" element={<MyPageHelp />} />
             </Route>
           </Route>
 

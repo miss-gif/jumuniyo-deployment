@@ -1,7 +1,7 @@
 import React from "react";
 
-const MyPageAddress = () => {
+const MyPageAddrList = () => {
   return <div>MyPageAddress</div>;
 };
 
-export default MyPageAddress;
+export default MyPageAddrList;

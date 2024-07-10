@@ -29,8 +29,10 @@
 
 - 마이페이지
   - 홈 페이지 MyPage
-  - 주문목록 Order list
+  - 주문내역 Order list
   - 리뷰관리 Review list
+  - 주소설정 Addr list
+  - 결제수단 Card list
   - 문의내역 Inquiry list
   - 고객센터 Help Service
 

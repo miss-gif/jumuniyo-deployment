@@ -28,10 +28,13 @@ const MypageHeader = () => {
   const currentPath = location.pathname;
 
   const navItems = [
-    { path: "/mypage", label: "계정관리" },
-    { path: "/mypage/address", label: "주소관리" },
-    { path: "/mypage/order", label: "주문내역" },
-    { path: "/mypage/review", label: "리뷰관리" },
+    { path: "/mypage", label: "마이페이지" },
+    { path: "/mypage/orderlist", label: "주문내역" },
+    { path: "/mypage/reviewlist", label: "리뷰관리" },
+    { path: "/mypage/addrlist", label: "주소관리" },
+    { path: "/mypage/cardlist", label: "카드관리" },
+    { path: "/mypage/inquirylist", label: "문의내역" },
+    { path: "/mypage/help", label: "고객센터" },
   ];
 
   return (
