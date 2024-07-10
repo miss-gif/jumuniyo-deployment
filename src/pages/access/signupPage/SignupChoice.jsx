@@ -23,7 +23,7 @@ const SignupChoice = () => {
           <p className="signup-choice__option-description">
             당신의 가게를 등록하고 배달 주문을 받아보세요.
           </p>
-          <a className="signup-choice__button" href="/signup/business">
+          <a className="signup-choice__button" href="/signup/owner">
             사업자 회원가입
           </a>
         </div>

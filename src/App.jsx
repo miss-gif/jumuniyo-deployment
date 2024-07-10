@@ -38,6 +38,7 @@ import MyPageAddrList from "./pages/user/mypagePage/MyPageAddress";
 import MyPageCardList from "./pages/user/mypagePage/MyPageCardList";
 import MyPageInquiryList from "./pages/user/mypagePage/MyPageInquiryList";
 import MyPageHelp from "./pages/user/mypagePage/MyPageHelp";
+import OwnerSignupPage from "./pages/access/signupPage/OwnerSignupPage";
 
 // 사업자
 
@@ -52,6 +53,7 @@ function App() {
             {/* 회원가입 */}
             <Route path="/signup" element={<SignupChoice />} />
             <Route path="/signup/user" element={<UserSignupPage />} />
+            <Route path="/signup/owner" element={<OwnerSignupPage />} />
           </Route>
 
           {/* 유저 */}
@@ -84,7 +86,7 @@ function App() {
 
           {/* 사업자 라우터 */}
           <Route path="/ceopage" element={<CeoLayout />}>
-            <Route path="/ceopage/" element={<CeoPage />} />
+            <Route path="/ceopage" element={<CeoPage />} />
             <Route path="orders" element={<Orders />} />
             <Route path="menu-management" element={<MenuManagement />} />
             <Route path="reviews" element={<Reviews />} />
