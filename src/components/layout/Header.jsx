@@ -42,7 +42,7 @@ function Header() {
               <Link to="/login">로그인</Link>
             </li>
             <li className="nav__item nav__item--auth btn">
-              <Link to="/auth">회원가입</Link>
+              <Link to="/signup">회원가입</Link>
             </li>
           </ul>
         </nav>

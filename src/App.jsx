@@ -1,30 +1,37 @@
 import { Route, Routes } from "react-router-dom";
+
 import NotFound from "./components/common/NotFound";
 import ProjectInfo from "./components/common/ProjectInfo";
+
+import AccountLayout from "./components/layout/AccountLayout";
 import AdminLayout from "./components/layout/AdminLayout";
 import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
+
 import LoginPage from "./pages/access/LoginPage";
+import SignupChoice from "./pages/access/signupPage/SignupChoice";
+import UserSignupPage from "./pages/access/signupPage/UserSignupPage";
+
 import AdminPage from "./pages/admin/adminPage/AdminPage";
+
 import MyPageAddress from "./pages/mypagePage/MyPageAddress";
+import MyPageLayout from "./pages/mypagePage/MyPageLayout";
 import MyPageOrderListPage from "./pages/mypagePage/MyPageOrderListPage";
 import MyPageOrderPage from "./pages/mypagePage/MyPageOrderPage";
 import MyPage from "./pages/mypagePage/MyPageProfile";
 import MyPageReviewPage from "./pages/mypagePage/MyPageReviewPage";
+
 import CeoPage from "./pages/owner/ownerPage/CeoPage";
 import MenuManagement from "./pages/owner/ownerPage/MenuManagement";
 import Orders from "./pages/owner/ownerPage/Orders";
 import Reviews from "./pages/owner/ownerPage/Reviews";
 import Statistics from "./pages/owner/ownerPage/Statistics";
 import StoreManagement from "./pages/owner/ownerPage/StoreManagement";
-import Test from "./pages/Test";
-import PaymentPage from "./pages/user/paymentPage/PaymentPage";
 
-import AccountLayout from "./components/layout/AccountLayout";
-import SignupChoice from "./pages/access/signupPage/SignupChoice";
-import UserSignupPage from "./pages/access/signupPage/UserSignupPage";
-import MyPageLayout from "./pages/mypagePage/MyPageLayout";
+import Test from "./pages/Test";
+
 import HomePage from "./pages/user/homePage/HomePage";
+import PaymentPage from "./pages/user/paymentPage/PaymentPage";
 import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
 import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
 
@@ -39,8 +46,8 @@ function App() {
             {/* 로그인 */}
             <Route path="/login" element={<LoginPage />} />
             {/* 회원가입 */}
-            <Route path="/auth" element={<SignupChoice />} />
-            <Route path="/auth/user" element={<UserSignupPage />} />
+            <Route path="/signup" element={<SignupChoice />} />
+            <Route path="/signup/user" element={<UserSignupPage />} />
           </Route>
 
           {/* 유저 */}
