@@ -14,12 +14,7 @@ import UserSignupPage from "./pages/access/signupPage/UserSignupPage";
 
 import AdminPage from "./pages/admin/adminPage/AdminPage";
 
-import MyPageAddress from "./pages/mypagePage/MyPageAddress";
-import MyPageLayout from "./pages/mypagePage/MyPageLayout";
 import MyPageOrderListPage from "./pages/user/mypagePage/MyPageOrderListPage";
-import MyPageOrderPage from "./pages/mypagePage/MyPageOrderPage";
-import MyPage from "./pages/mypagePage/MyPageProfile";
-import MyPageReviewPage from "./pages/mypagePage/MyPageReviewPage";
 
 import CeoPage from "./pages/owner/ownerPage/CeoPage";
 import MenuManagement from "./pages/owner/ownerPage/MenuManagement";
@@ -34,6 +29,11 @@ import HomePage from "./pages/user/homePage/HomePage";
 import PaymentPage from "./pages/user/paymentPage/PaymentPage";
 import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
 import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
+import MyPageOrderPage from "./pages/user/mypagePage/MyPageOrderPage";
+import MyPageLayout from "./pages/user/mypagePage/MyPageLayout";
+import MyPage from "./pages/user/mypagePage/MyPageProfile";
+import MyPageReviewPage from "./pages/user/mypagePage/MyPageReviewPage";
+import MyPageAddress from "./pages/user/mypagePage/MyPageAddress";
 
 // 사업자
 

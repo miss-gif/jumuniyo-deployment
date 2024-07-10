@@ -1,5 +1,5 @@
 import React from "react";
-import OrderPreview from "../../components/common/OrderPreview";
+import OrderPreview from "../../../components/common/OrderPreview";
 
 const MyPageOrderPage = () => {
   return (
