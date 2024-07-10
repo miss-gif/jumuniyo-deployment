@@ -12,12 +12,11 @@ import AuthCeoPage from "./pages/AuthCeoPage.jsx";
 import CeoPage from "./pages/CeoPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
-import MyPage from "./pages/mypage/MyPage.jsx";
+import MyPage from "./pages/mypage/MyPageProfile.jsx";
 import MyPageAddress from "./pages/mypage/MyPageAddress";
 import MyPageOrderListPage from "./pages/mypage/MyPageOrderListPage.jsx";
 import MyPageOrderPage from "./pages/mypage/MyPageOrderPage.jsx";
 import MyPageReviewPage from "./pages/mypage/MyPageReviewPage";
-import MypageUserWithdrawal from "./pages/mypage/MypageUserWithdrawal";
 import NotFound from "./pages/NotFound.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import ProjectInfo from "./pages/ProjectInfo.jsx";
@@ -26,10 +25,10 @@ import Test from "./pages/Test";
 
 import RestaurantDetailPage from "./pages/RestaurantDetailPage";
 
-import MyPageLayout from "./components/layout/MyPageLayout";
 import SignupChoice from "./pages/SignupChoice";
 import AccountLayout from "./components/layout/AccountLayout";
 import UserSignupPage from "./pages/UserSignupPage.jsx";
+import MyPageLayout from "./pages/mypage/MyPageLayout";
 
 // 사업자
 
@@ -62,10 +61,6 @@ function App() {
               <Route path="/mypage/order/:id" element={<MyPageOrderPage />} />
               <Route path="/mypage/review" element={<MyPageReviewPage />} />
               <Route path="/mypage/address" element={<MyPageAddress />} />
-              <Route
-                path="/mypage/withdrawal"
-                element={<MypageUserWithdrawal />}
-              />
             </Route>
           </Route>
 
