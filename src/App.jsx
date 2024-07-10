@@ -16,7 +16,7 @@ import AdminPage from "./pages/admin/adminPage/AdminPage";
 
 import MyPageAddress from "./pages/mypagePage/MyPageAddress";
 import MyPageLayout from "./pages/mypagePage/MyPageLayout";
-import MyPageOrderListPage from "./pages/mypagePage/MyPageOrderListPage";
+import MyPageOrderListPage from "./pages/user/mypagePage/MyPageOrderListPage";
 import MyPageOrderPage from "./pages/mypagePage/MyPageOrderPage";
 import MyPage from "./pages/mypagePage/MyPageProfile";
 import MyPageReviewPage from "./pages/mypagePage/MyPageReviewPage";

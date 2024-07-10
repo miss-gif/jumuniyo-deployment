@@ -28,11 +28,15 @@
 - 주문내역 확인 페이지
 
 - 마이페이지
-  - 홈 페이지
+  - 홈 페이지 MyPage
+  - 주문목록 Order list
+  - 리뷰관리 Review list
+  - 문의내역 Inquiry list
+  - 고객센터 Help Service
 
 2. 사업자 owner
 
-- 홈 페이지
+- 홈 페이지 OwnerPage
 - 주문관리 페이지
 - 주문내역 페이지
 - 메뉴관리 페이지
@@ -42,6 +46,6 @@
 
 3. 관리자 admin
 
-- 홈 페이지
+- 홈 페이지 AdminPage
 - 카테고리 관리 페이지
 - 신고관리 페이지
