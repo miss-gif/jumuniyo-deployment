@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-
-import RestaurantDetailMenuContent from "../../components/user/restaurantdetail/RestaurantDetailMenuContent";
-import RestaurantDetailCleanReview from "../../components/user/restaurantdetail/RestaurantDetailCleanReview";
-import RestaurantDetailTabInfo from "../../components/user/restaurantdetail/RestaurantDetailTabInfo";
-import RestaurantDetailInfo from "../../components/user/restaurantdetail/RestaurantDetailInfo";
-import RestaurantDetailHeader from "../../components/user/restaurantdetail/RestaurantDetailHeader";
-import OrderSummary from "../../components/user/restaurantdetail/OrderSummary";
+import RestaurantDetailMenuContent from "./RestaurantDetailMenuContent";
+import RestaurantDetailCleanReview from "./RestaurantDetailCleanReview";
+import RestaurantDetailTabInfo from "./RestaurantDetailTabInfo";
+import RestaurantDetailInfo from "./RestaurantDetailInfo";
+import RestaurantDetailHeader from "./RestaurantDetailHeader";
+import OrderSummary from "./OrderSummary";
 
 const RestaurantDetailPage = () => {
   const [activeTab, setActiveTab] = useState("menu");

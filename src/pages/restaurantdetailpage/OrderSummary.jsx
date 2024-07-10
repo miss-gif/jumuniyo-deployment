@@ -1,7 +1,7 @@
 import React from "react";
-import QuantityCount from "../../common/QuantityCount";
 import CloseIcon from "@mui/icons-material/Close";
 import DeleteIcon from "@mui/icons-material/Delete";
+import QuantityCount from "../../components/common/QuantityCount";
 
 const OrderSummary = () => {
   return (
