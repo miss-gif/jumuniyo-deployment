@@ -8,7 +8,10 @@
 .btn {
   @extend .btn-base;
   color: $white;
-  background-color: $black;
+  // background-color: $black;
+  background-color: #00c4bd;
+  border: 1px solid #fff;
+  box-shadow: $shadow-3;
 }
 
 .btn--active {

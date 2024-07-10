@@ -4,18 +4,14 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
+import Logo from "../common/Logo";
 
 function Header() {
   return (
     <header className="header">
       <div className="inner">
         <h1>
-          <Link to="/">
-            <img
-              src={process.env.PUBLIC_URL + "/images/logo_1x.png"}
-              alt="Logo"
-            />
-          </Link>
+          <Logo />
         </h1>
         <nav className="nav">
           <ul className="nav__top">
