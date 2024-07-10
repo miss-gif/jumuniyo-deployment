@@ -10,59 +10,57 @@
 
 // common: 공통 스타일
 @import "./css/common.scss";
-@import "./css/button.scss";
-@import "./css/LocationSearch.scss";
-@import "./css/RestaurantsFilters.scss";
-@import "./css/Review.scss";
-@import "./css/OwnerComment.scss";
+@import "./components/common/button.scss";
+@import "./components/common/LocationSearch.scss";
+@import "./components/common/RestaurantsFilters.scss";
+@import "./components/common/Review.scss";
+@import "./components/common/OwnerComment.scss";
 
 // layout: 레이아웃 관련 스타일
-@import "./css/RootLayout.scss";
-@import "./css/Header.scss";
-@import "./css/Footer.scss";
+@import "./components/layout/RootLayout.scss";
+@import "./components/layout/Header.scss";
+@import "./components/layout/Footer.scss";
 
 // components: 컴포넌트 스타일
-@import "./css/ToTop.scss";
-@import "./css/NewRestaurantListCarousel.scss";
+@import "./components/common/ToTop.scss";
 
 // pages: 페이지 스타일
-@import "./css/CeoPage.scss";
-@import "./css/ProjectInfo.scss";
+@import "./pages/owner/ownerPage/CeoPage.scss";
+@import "./components/common/ProjectInfo.scss";
 
 /**
   페이지 및 컴포넌트 구분
 */
 
 // HomePage CSS miss-gif
-@import "./css/HomePage.scss";
-@import "./css/CategoryNavigation.scss";
-@import "./css/SwiperSlideComponent.scss";
+@import "./pages/user/homePage/HomePage.scss";
+@import "./pages/user/homePage/CategoryNavigation.scss";
+@import "./components/common/SwiperSlideComponent.scss";
 
 // RestaurantsPage CSS CSS miss-gif
-@import "./css/RestaurantsPage.scss";
+@import "./pages/user/restaurantListPage/RestaurantsPage.scss";
 
 // RestaurantDetailPage CSS miss-gif
-@import "./pages/restaurantDetailPage/RestaurantDetailPage.scss";
-@import "./pages/restaurantDetailPage/RestaurantDetailInfo.scss";
-@import "./pages/restaurantDetailPage/RestaurantDetailHeader.scss";
-@import "./pages/restaurantDetailPage/RestaurantDetailMenuContent.scss";
-@import "./pages/restaurantDetailPage/RestaurantDetailCarousel.scss";
-@import "./pages/restaurantDetailPage/RestaurantDetailCleanReview.scss";
-@import "./pages/restaurantDetailPage/RestaurantDetailTabInfo.scss";
-@import "./pages/restaurantDetailPage/OrderSummary.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailPage.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailInfo.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailHeader.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailMenuContent.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailCarousel.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailCleanReview.scss";
+@import "./pages/user/restaurantDetailPage/RestaurantDetailTabInfo.scss";
+@import "./pages/user/restaurantDetailPage/OrderSummary.scss";
 
 // PaymentPage CSS miss-gif
-@import "./css/PaymentPage.scss";
+@import "./pages/user/paymentPage/PaymentPage.scss";
 
 // MyPage-Page CSS miss-gif
-@import "./pages/mypagePage/MyPage.scss";
-@import "./pages/mypagePage/MyPageOrderPage.scss";
-@import "./pages/mypagePage/MyPageLayout.scss";
+@import "./pages/user/mypagePage/MyPage.scss";
+@import "./pages/user/mypagePage/MyPageOrderPage.scss";
+@import "./pages/user/mypagePage/MyPageLayout.scss";
 
 // 로그인
-@import "./css/LoginPage.scss";
+@import "./pages/access/LoginPage.scss";
+@import "./pages/access/signupPage/SignupChoice.scss";
+@import "./pages/access/signupPage/UserSignupPage.scss";
 
-@import "./css/SignupChoice.scss";
-@import "./css/UserSignupPage.scss";
-
-@import "./css/OrderPreview.scss";
+@import "./components/common/OrderPreview.scss";

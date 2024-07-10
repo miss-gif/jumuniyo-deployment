@@ -1,33 +1,32 @@
 import { Route, Routes } from "react-router-dom";
-import MenuManagement from "./pages/ownerPage/MenuManagement";
-import Orders from "./pages/ownerPage/Orders";
-import Reviews from "./pages/ownerPage/Reviews";
-import Statistics from "./pages/ownerPage/Statistics";
-import StoreManagement from "./pages/ownerPage/StoreManagement";
+import MenuManagement from "./pages/owner/ownerPage/MenuManagement";
+import Orders from "./pages/owner/ownerPage/Orders";
+import Reviews from "./pages/owner/ownerPage/Reviews";
+import Statistics from "./pages/owner/ownerPage/Statistics";
+import StoreManagement from "./pages/owner/ownerPage/StoreManagement";
 import AdminLayout from "./components/layout/AdminLayout";
 import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
-import AdminPage from "./pages/adminPage/AdminPage";
-import AuthCeoPage from "./pages/AuthCeoPage";
+import AdminPage from "./pages/admin/adminPage/AdminPage";
 import HomePage from "./pages/homePage/HomePage";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/access/LoginPage";
 import MyPageAddress from "./pages/mypagePage/MyPageAddress";
 import MyPageOrderListPage from "./pages/mypagePage/MyPageOrderListPage";
 import MyPageOrderPage from "./pages/mypagePage/MyPageOrderPage";
 import MyPage from "./pages/mypagePage/MyPageProfile";
 import MyPageReviewPage from "./pages/mypagePage/MyPageReviewPage";
-import NotFound from "./pages/NotFound";
-import CeoPage from "./pages/ownerPage/CeoPage";
-import PaymentPage from "./pages/PaymentPage";
-import ProjectInfo from "./pages/ProjectInfo";
+import NotFound from "./components/common/NotFound";
+import CeoPage from "./pages/owner/ownerPage/CeoPage";
+import PaymentPage from "./pages/user/paymentPage/PaymentPage";
+import ProjectInfo from "./components/common/ProjectInfo";
 import Test from "./pages/Test";
 
 import AccountLayout from "./components/layout/AccountLayout";
 import MyPageLayout from "./pages/mypagePage/MyPageLayout";
-import RestaurantDetailPage from "./pages/restaurantDetailPage/RestaurantDetailPage";
-import RestaurantsPage from "./pages/restaurantListPage/RestaurantsPage";
-import SignupChoice from "./pages/signupPage/SignupChoice";
-import UserSignupPage from "./pages/signupPage/UserSignupPage";
+import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
+import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
+import SignupChoice from "./pages/access/signupPage/SignupChoice";
+import UserSignupPage from "./pages/access/signupPage/UserSignupPage";
 
 // 사업자
 
@@ -42,7 +41,6 @@ function App() {
             {/* 회원가입 */}
             <Route path="/auth" element={<SignupChoice />} />
             <Route path="/auth/user" element={<UserSignupPage />} />
-            <Route path="/auth/ceo" element={<AuthCeoPage />} />
           </Route>
 
           {/* 유저 */}

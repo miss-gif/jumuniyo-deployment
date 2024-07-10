@@ -1,5 +1,5 @@
 import React from "react";
-import Review from "../../components/common/Review";
+import Review from "../../../components/common/Review";
 // import "./RestaurantDetailCleanReview.scss";
 
 const RestaurantDetailCleanReview = () => {
