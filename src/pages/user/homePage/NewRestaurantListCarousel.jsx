@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import SwiperSlideComponent from "../../components/common/SwiperSlideComponent";
-import carouselDummy from "../../json/carouselDummy.json";
+import SwiperSlideComponent from "../../../components/common/SwiperSlideComponent";
+import carouselDummy from "../../../json/carouselDummy.json";
 import PropTypes from "prop-types";
 
 const NewRestaurantListCarousel = () => {
