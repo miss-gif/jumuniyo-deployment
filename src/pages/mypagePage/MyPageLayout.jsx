@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import MypageHeader from "../../pages/mypage/MypageHeader";
+import MypageHeader from "./MypageHeader";
 
 const MyPageLayout = () => {
   return (

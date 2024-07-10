@@ -7,28 +7,27 @@ import StoreManagement from "./components/ceo/StoreManagement";
 import AdminLayout from "./components/layout/AdminLayout";
 import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
-import AdminPage from "./pages/AdminPage";
+import AdminPage from "./pages/adminpage/AdminPage";
 import AuthCeoPage from "./pages/AuthCeoPage";
-import CeoPage from "./pages/CeoPage";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/homepage/HomePage";
 import LoginPage from "./pages/LoginPage";
-import MyPage from "./pages/mypage/MyPageProfile";
-import MyPageAddress from "./pages/mypage/MyPageAddress";
-import MyPageOrderListPage from "./pages/mypage/MyPageOrderListPage";
-import MyPageOrderPage from "./pages/mypage/MyPageOrderPage";
-import MyPageReviewPage from "./pages/mypage/MyPageReviewPage";
+import MyPageAddress from "./pages/mypagePage/MyPageAddress";
+import MyPageOrderListPage from "./pages/mypagePage/MyPageOrderListPage";
+import MyPageOrderPage from "./pages/mypagePage/MyPageOrderPage";
+import MyPage from "./pages/mypagePage/MyPageProfile";
+import MyPageReviewPage from "./pages/mypagePage/MyPageReviewPage";
 import NotFound from "./pages/NotFound";
+import CeoPage from "./pages/ownerpage/CeoPage";
 import PaymentPage from "./pages/PaymentPage";
 import ProjectInfo from "./pages/ProjectInfo";
-import RestaurantsPage from "./pages/RestaurantsPage";
 import Test from "./pages/Test";
 
-import RestaurantDetailPage from "./pages/RestaurantDetailPage";
-
-import SignupChoice from "./pages/SignupChoice";
 import AccountLayout from "./components/layout/AccountLayout";
-import UserSignupPage from "./pages/UserSignupPage";
-import MyPageLayout from "./pages/mypage/MyPageLayout";
+import MyPageLayout from "./pages/mypagePage/MyPageLayout";
+import RestaurantDetailPage from "./pages/restaurantdetailpage/RestaurantDetailPage";
+import RestaurantsPage from "./pages/restaurantlistpage/RestaurantsPage";
+import SignupChoice from "./pages/signupPage/SignupChoice";
+import UserSignupPage from "./pages/signupPage/UserSignupPage";
 
 // 사업자
 
