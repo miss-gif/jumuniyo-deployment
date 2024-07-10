@@ -5,17 +5,15 @@
 .mypage-header-list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #dbdbdb;
-  border-left: 1px solid #dbdbdb;
-  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
 }
 
 .mypage-header {
   & button {
-    border-bottom: 1px solid #dbdbdb;
-    width: 120px;
+    border-bottom: 1px solid $borderColor;
     padding: 16px 20px;
-    transition: all 0.3s;
     &:last-child {
       border-bottom: 0;
     }
@@ -24,25 +22,28 @@
 
 .mypage-content {
   width: 100%;
-  border: 1px solid #dbdbdb;
+  border: 1px solid $borderColor;
   padding: 8px;
 }
 
 @include tablet {
-  .mypage-wrap {
+  .mypage-layout {
+    display: flex;
     flex-direction: column;
+    gap: 8px;
   }
 
   .mypage-header-list {
     flex-direction: row;
+    flex-wrap: wrap;
     border-bottom: 0;
 
     & button {
-      border-right: 1px solid #dbdbdb;
+      border-right: 1px solid $borderColor;
+      max-width: 120px;
       width: 100%;
       &:last-child {
-        border-bottom: 1px solid #dbdbdb;
-        border-right: 0;
+        border-bottom: 1px solid $borderColor;
       }
     }
   }
