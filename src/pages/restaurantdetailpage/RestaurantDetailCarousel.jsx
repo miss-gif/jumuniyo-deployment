@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import carouselDummy from "../../json/user/carouselDummy.json";
+import carouselDummy from "../../json/carouselDummy.json";
 import PropTypes from "prop-types";
 import RestaurantDetailSwiperSlide from "./RestaurantDetailSwiperSlide";
 
