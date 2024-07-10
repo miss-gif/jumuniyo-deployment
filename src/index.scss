@@ -42,14 +42,14 @@
 @import "./css/RestaurantsPage.scss";
 
 // RestaurantDetailPage CSS miss-gif
-@import "./css/RestaurantDetailPage.scss";
-@import "./css/RestaurantDetailInfo.scss";
-@import "./css/RestaurantDetailHeader.scss";
-@import "./css/RestaurantDetailMenuContent.scss";
-@import "./css/RestaurantDetailCarousel.scss";
-@import "./css/RestaurantDetailCleanReview.scss";
-@import "./css/RestaurantDetailTabInfo.scss";
-@import "./css/OrderSummary.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailPage.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailInfo.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailHeader.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailMenuContent.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailCarousel.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailCleanReview.scss";
+@import "./pages/restaurantDetailPage/RestaurantDetailTabInfo.scss";
+@import "./pages/restaurantDetailPage/OrderSummary.scss";
 
 // PaymentPage CSS miss-gif
 @import "./css/PaymentPage.scss";
