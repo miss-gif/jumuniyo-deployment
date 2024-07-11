@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+  }
 
   &__title {
     font-size: 24px;
@@ -15,46 +17,46 @@
   }
 
   &__description {
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 14px;
+    margin-bottom: 24px;
     text-align: center;
+    color: #999;
   }
 
   &__options {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    gap: 8px;
   }
 
   &__option {
-    width: 45%;
-    padding: 20px;
-    border: 1px solid #ddd;
+    width: 50%;
+    padding: 32px 16px;
+    border: 1px solid $borderColor;
     border-radius: 10px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #fff;
 
     &-title {
       font-size: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     &-description {
-      font-size: 14px;
+      font-size: 12px;
       margin-bottom: 20px;
+      color: #999;
     }
   }
 
   &__button {
     display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 4px;
     background-color: #007bff;
     color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-    cursor: pointer;
+    font-size: 14px;
 
     &:hover {
       background-color: #0056b3;
