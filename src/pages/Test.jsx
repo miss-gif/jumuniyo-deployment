@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import ModalComponent from "../components/common/ModalComponent";
 import MenuOrderModal from "./user/restaurantDetailPage/MenuOrderModal";
-import { CheckBox } from "@mui/icons-material";
 
 const Test = () => {
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
@@ -72,7 +71,6 @@ const Test = () => {
       <div>
         <MenuOrderModal />
       </div>
-      <CheckBox />
     </div>
   );
 };
