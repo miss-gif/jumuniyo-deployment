@@ -1,12 +1,22 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import Logo from "../common/Logo";
+import { clearTokens } from "../../features/auth/authSlice"; // 로그아웃 액션 가져오기
 
 function Header() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+
+  const handleLogout = () => {
+    dispatch(clearTokens());
+    // 로그아웃 후 추가적인 작업이 필요하다면 여기에 추가
+  };
+
   return (
     <header className="header">
       <div className="inner">
@@ -38,12 +48,20 @@ function Header() {
             <li className="nav__item">
               <Link to="/mypage">마이페이지</Link>
             </li>
-            <li className="nav__item nav__item--login">
-              <Link to="/login">로그인</Link>
-            </li>
-            <li className="nav__item nav__item--auth btn">
-              <Link to="/signup">회원가입</Link>
-            </li>
+            {isLoggedIn ? (
+              <li className="nav__item nav__item--logout btn">
+                <button onClick={handleLogout}>로그아웃</button>
+              </li>
+            ) : (
+              <>
+                <li className="nav__item nav__item--login">
+                  <Link to="/login">로그인</Link>
+                </li>
+                <li className="nav__item nav__item--auth btn">
+                  <Link to="/signup">회원가입</Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
         <nav className="header-mobile">
