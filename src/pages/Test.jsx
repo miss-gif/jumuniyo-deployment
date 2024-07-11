@@ -1,8 +1,8 @@
 // App.jsx
 import React, { useState } from "react";
 import ModalComponent from "../components/common/ModalComponent";
-import GoogleMaps from "../components/common/GoogleMaps";
-// import MenuOrderModal from "../components/user/restaurantdetail/MenuOrderModal";
+import MenuOrderModal from "./user/restaurantDetailPage/MenuOrderModal";
+import { CheckBox } from "@mui/icons-material";
 
 const Test = () => {
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
@@ -68,10 +68,11 @@ const Test = () => {
         onCheck={handleCheckboxChange}
         onConfirm={handleCheckboxConfirm}
       />
+
       <div>
-        <GoogleMaps />
+        <MenuOrderModal />
       </div>
-      <div>{/* <MenuOrderModal /> */}</div>
+      <CheckBox />
     </div>
   );
 };
