@@ -1,14 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useCookies } from "react-cookie";
 import { loginUser } from "../api/user";
-import { useCookies } from "react-cookie"; // useCookies 훅 사용
+import { setTokens } from "../features/auth/authSlice";
 
 const useLogin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [cookies, setCookie] = useCookies(["accessToken"]); // useCookies 훅 사용
+  const dispatch = useDispatch();
+  const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
 
   const login = async (username, password) => {
     setLoading(true);
@@ -17,9 +20,10 @@ const useLogin = () => {
       const response = await loginUser(username, password);
       console.log("로그인 응답:", response); // 응답 로그 출력
       if (response.statusCode === 1) {
-        setCookie("accessToken", response.resultData.accessToken, {
-          path: "/",
-        }); // 쿠키 설정
+        const { accessToken, refreshToken } = response.resultData;
+        setCookie("accessToken", accessToken, { path: "/" });
+        setCookie("refreshToken", refreshToken, { path: "/" });
+        dispatch(setTokens({ accessToken, refreshToken }));
         setLoading(false); // 상태 업데이트
         navigate("/"); // 페이지 이동
         console.log("로그인 성공");

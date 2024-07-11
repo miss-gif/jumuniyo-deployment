@@ -4,6 +4,8 @@ import "./index.scss";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { register } from "swiper/element/bundle";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 // Swiper 요소 등록
 register();
@@ -11,6 +13,8 @@ register();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>,
 );
