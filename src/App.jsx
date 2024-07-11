@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NotFound from "./components/common/NotFound";
 import ProjectInfo from "./components/common/ProjectInfo";
 
-import AccountLayout from "./components/layout/AccountLayout";
+import AccountLayout from "./components/layout/AccessLayout";
 import AdminLayout from "./components/layout/AdminLayout";
 import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";

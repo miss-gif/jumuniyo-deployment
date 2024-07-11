@@ -1,0 +1,11 @@
+.access-layout {
+  @include flex-center;
+  flex-direction: column;
+  margin-top: 90px;
+}
+
+.mobile-inner {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 4px;
+}

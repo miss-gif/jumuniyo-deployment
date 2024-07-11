@@ -16,10 +16,18 @@
 @import "./components/common/Review.scss";
 @import "./components/common/OwnerComment.scss";
 
-// layout: 레이아웃 관련 스타일
+// Access 레이아웃
+@import "./components/layout/AccessLayout.scss";
+@import "./components/layout/AccessHeader.scss";
+
+// user 레이아웃
 @import "./components/layout/RootLayout.scss";
 @import "./components/layout/Header.scss";
 @import "./components/layout/Footer.scss";
+
+// owner 레이아웃
+
+// admin 레이아웃
 
 // components: 컴포넌트 스타일
 @import "./components/common/ToTop.scss";

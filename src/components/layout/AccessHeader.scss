@@ -1,0 +1,11 @@
+.access-header {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  &-title {
+    font-size: 14px;
+    color: #999;
+  }
+}

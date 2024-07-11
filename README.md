@@ -2,6 +2,8 @@
 
 이미지 https://picsum.photos/100/
 
+퍼블릭이미지 `<img src={process.env.PUBLIC_URL + "/images/logo_1x.png"} alt="Logo" />`
+
 ### 컴포넌트와 style 관리
 
 - 컴포넌트와 style을 함께 보관한다.
