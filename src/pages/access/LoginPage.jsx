@@ -1,28 +1,45 @@
+import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
 
 const LoginPage = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { login, loading, error } = useLogin();
+
+  const handleLogin = e => {
+    e.preventDefault();
+    login(username, password);
+  };
+
   return (
     <div className="login">
-      <form className="login__form">
+      <form className="login__form" onSubmit={handleLogin}>
         <div className="login__form-group">
           <TextField
-            id="outlined-basic"
             label="아이디"
-            variant="outlined"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
             sx={{ width: 500, maxWidth: "100%" }}
           />
           <TextField
-            id="outlined-basic"
             label="비밀번호"
-            variant="outlined"
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
             sx={{ width: 500, maxWidth: "100%" }}
           />
-          <Button variant="contained" size="large">
-            로그인
+          <Button
+            variant="contained"
+            size="large"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "로그인 중..." : "로그인"}
           </Button>
         </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
       <div className="login__links">
         <Link className="login__link" to="/auth">
