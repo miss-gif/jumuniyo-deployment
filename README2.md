@@ -1,6 +1,6 @@
 ### 문제해결 과정
 
-1. 로그인에 성공하면 `navigate("/")`로 이동하는 코드가 작동하지 않음.
+#### 로그인에 성공하면 `navigate("/")`로 이동하는 코드가 작동하지 않음.
 
 ```js
 import { useState } from "react";
@@ -84,4 +84,21 @@ const useLogin = () => {
 };
 
 export default useLogin;
+```
+
+#### 로그아웃 버튼을 누르면 쿠키에 저장된 토큰이 삭제되어야 함. (refresh-token이 삭제되지 않음)
+
+```js
+const handleLogout = () => {
+  // 쿠키 삭제
+  removeCookie("accessToken", { path: "/" });
+  removeCookie("refreshToken", { path: "/" });
+  removeCookie("refresh-token", { path: "/" });
+
+  // Redux 상태 초기화
+  dispatch(clearTokens());
+
+  // 로그아웃 후 리디렉션
+  navigate("/login");
+};
 ```

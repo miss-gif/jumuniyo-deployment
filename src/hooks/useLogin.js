@@ -22,7 +22,7 @@ const useLogin = () => {
       if (response.statusCode === 1) {
         const { accessToken, refreshToken } = response.resultData;
         setCookie("accessToken", accessToken, { path: "/" });
-        setCookie("refreshToken", refreshToken, { path: "/" });
+        setCookie("refresh-token", refreshToken, { path: "/" });
         dispatch(setTokens({ accessToken, refreshToken }));
         setLoading(false); // 상태 업데이트
         navigate("/"); // 페이지 이동

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("aapolzndf1");
-  const [password, setPassword] = useState("Afds@5641");
+  const [username, setUsername] = useState("wyfmel1");
+  const [password, setPassword] = useState("wyfmel1");
   const { login, loading, error } = useLogin();
 
   const handleLogin = e => {

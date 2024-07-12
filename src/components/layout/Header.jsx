@@ -1,20 +1,36 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import Logo from "../common/Logo";
 import { clearTokens } from "../../features/auth/authSlice"; // 로그아웃 액션 가져오기
+import { useCookies } from "react-cookie"; // useCookies 훅 가져오기
 
 function Header() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "accessToken",
+    "refresh-token",
+  ]); // useCookies 훅 사용
+
+  const navigate = useNavigate();
 
   const handleLogout = () => {
+    // 쿠키 삭제
+    removeCookie("accessToken", { path: "/" });
+    removeCookie("refreshToken", { path: "/" });
+    removeCookie("refresh-token", { path: "/" });
+
+    // Redux 상태 초기화
     dispatch(clearTokens());
-    // 로그아웃 후 추가적인 작업이 필요하다면 여기에 추가
+
+    // 로그아웃 후 리디렉션
+    navigate("/login");
   };
 
   return (
