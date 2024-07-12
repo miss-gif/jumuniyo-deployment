@@ -2,6 +2,8 @@
 
 #### 로그인에 성공하면 `navigate("/")`로 이동하는 코드가 작동하지 않음.
 
+- 원인 : react-cookie의 최신 버전에서는 Cookies 객체가 set 메서드를 지원하지 않음.
+
 ```js
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -41,7 +43,7 @@ const useLogin = () => {
 export default useLogin;
 ```
 
-- 원인 : react-cookie의 최신 버전에서는 Cookies 객체가 set 메서드를 지원하지 않기 때문에 useCookies 훅을 사용해야 합니다.
+- 해결방법 : 그래서 useCookies 훅을 사용해야 합니다.
 
 ```js
 import { useState } from "react";
@@ -100,5 +102,31 @@ const handleLogout = () => {
 
   // 로그아웃 후 리디렉션
   navigate("/login");
+};
+```
+
+#### 로그인 상태에서 새로고침 시 로그인 상태를 유지하지 않는 문제
+
+- 원인 : 로그인 상태를 브라우저 새로 고침 시 유지하지 않기 때문에 발생합니다.
+
+```js
+const initialState = {
+  accessToken: null,
+  refreshToken: null,
+  isLoggedIn: false, // 로그인 상태 추가
+};
+```
+
+- 해결방법 : 이 문제를 해결하려면 브라우저 새로 고침 시 쿠키를 확인하여 로그인 상태를 복원하는 로직이 필요합니다.
+
+```js
+import { Cookies } from "react-cookie";
+
+const cookies = new Cookies();
+
+const initialState = {
+  accessToken: cookies.get("accessToken") || null,
+  refreshToken: cookies.get("refresh-token") || null,
+  isLoggedIn: !!cookies.get("accessToken"), // 쿠키에 accessToken이 있으면 로그인 상태로 설정
 };
 ```
