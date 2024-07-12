@@ -86,7 +86,7 @@ const useLogin = () => {
 export default useLogin;
 ```
 
-#### 로그아웃 버튼을 누르면 쿠키에 저장된 토큰이 삭제되어야 함. (refresh-token이 삭제되지 않음)
+#### 로그아웃 버튼을 누르면 쿠키에 저장된 토큰이 삭제되어야 함. (refresh-token이 삭제되지 않음) - 미해결
 
 ```js
 const handleLogout = () => {
