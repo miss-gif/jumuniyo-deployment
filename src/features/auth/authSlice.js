@@ -1,10 +1,13 @@
 // src/features/auth/authSlice.js
 import { createSlice } from "@reduxjs/toolkit";
+import { Cookies } from "react-cookie";
+
+const cookies = new Cookies();
 
 const initialState = {
-  accessToken: null,
-  refreshToken: null,
-  isLoggedIn: false, // 로그인 상태 추가
+  accessToken: cookies.get("accessToken") || null,
+  refreshToken: cookies.get("refresh-token") || null,
+  isLoggedIn: !!cookies.get("accessToken"), // 쿠키에 accessToken이 있으면 로그인 상태로 설정
 };
 
 const authSlice = createSlice({
