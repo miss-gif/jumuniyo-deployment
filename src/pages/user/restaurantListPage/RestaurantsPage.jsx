@@ -7,7 +7,9 @@ const RestaurantsPage = () => {
     <>
       <div className="restaurants-page">
         <Filters />
-        <h2 className="restaurants-page__title">주문이요 등록 음식점</h2>
+        <h2 className="restaurants-page__title">
+          주문이요 등록 음식점 <span className="search-count">33333</span>
+        </h2>
         <ul className="restaurants-page__list">
           <li className="restaurant-item">
             <img

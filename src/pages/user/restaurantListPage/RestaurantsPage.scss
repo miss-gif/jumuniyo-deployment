@@ -1,4 +1,12 @@
 .restaurants-page {
+  &__title {
+    span {
+      font-size: 14px;
+      color: $textGray;
+      padding: 0 4px;
+    }
+  }
+
   .filters {
     display: flex;
     justify-content: flex-end;
