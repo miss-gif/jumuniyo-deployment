@@ -1,0 +1,26 @@
+.owner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+
+  &__left {
+    // 로고 스타일링 (필요에 따라 추가)
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user {
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+
+  &__item {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+}
