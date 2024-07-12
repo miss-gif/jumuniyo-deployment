@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "/api/user/sign-in";
+const API_URL = "/api/sign-in";
 
 export const loginUser = async (username, password) => {
   try {
