@@ -5,7 +5,6 @@ import ProjectInfo from "./components/common/ProjectInfo";
 
 import AccountLayout from "./components/layout/AccessLayout";
 import AdminLayout from "./components/layout/AdminLayout";
-import CeoLayout from "./components/layout/CeoLayout";
 import RootLayout from "./components/layout/RootLayout";
 
 import LoginPage from "./pages/access/LoginPage";
@@ -15,13 +14,6 @@ import UserSignupPage from "./pages/access/signupPage/UserSignupPage";
 import AdminPage from "./pages/admin/adminPage/AdminPage";
 
 import MyPageOrderListPage from "./pages/user/mypagePage/MyPageOrderListPage";
-
-import CeoPage from "./pages/owner/ownerPage/CeoPage";
-import MenuManagement from "./pages/owner/ownerPage/MenuManagement";
-import Orders from "./pages/owner/ownerPage/Orders";
-import Reviews from "./pages/owner/ownerPage/Reviews";
-import Statistics from "./pages/owner/ownerPage/Statistics";
-import StoreManagement from "./pages/owner/ownerPage/StoreManagement";
 
 import Test from "./pages/Test";
 
@@ -85,14 +77,6 @@ function App() {
           </Route>
 
           {/* 사업자 라우터 */}
-          <Route path="/ceopage" element={<CeoLayout />}>
-            <Route path="/ceopage" element={<CeoPage />} />
-            <Route path="orders" element={<Orders />} />
-            <Route path="menu-management" element={<MenuManagement />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="store-management" element={<StoreManagement />} />
-            <Route path="statistics" element={<Statistics />} />
-          </Route>
 
           {/* 관리자 라우터 */}
           <Route path="/admin" element={<AdminLayout />}>
