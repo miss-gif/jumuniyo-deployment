@@ -11,8 +11,8 @@ const OwnerLayout = () => {
       <div className="owner-content">
         <OwnerNav />
         <Outlet />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

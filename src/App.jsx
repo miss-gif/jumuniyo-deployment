@@ -41,6 +41,7 @@ import MyPageReviewPage from "./pages/user/mypagePage/MyPageReviewPage";
 import PaymentPage from "./pages/user/paymentPage/PaymentPage";
 import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
 import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
+import OwnerDashboardPage from "./pages/owner/ownerDashboardPage/OwnerDashboardPage";
 
 // 사업자
 
@@ -89,7 +90,7 @@ function App() {
             <Route path="orders" element={<OwnerOrdersPage />} />
             <Route path="reviews" element={<OwnerReviewsPage />} />
             <Route path="stores" element={<OwnerStoresPage />} />
-            {/* Add a 404 "Not Found" route here if needed */}
+            <Route path="dashboard" element={<OwnerDashboardPage />} />
           </Route>
 
           {/* 관리자 라우터 */}
