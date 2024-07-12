@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import ModalMenuSearch from "../../pages/user/restaurantListPage/ModalMenuSearch";
 
 const RestaurantsFilters = () => {
   const [isMenuSearchVisible, setMenuSearchVisible] = useState(false);
@@ -36,22 +37,10 @@ const RestaurantsFilters = () => {
             <ul className="filters__list">
               <li className="filters__item btn-active">전체보기</li>
               <li className="filters__item">한식</li>
-              <li className="filters__item">중식</li>
-              <li className="filters__item">양식</li>
-              <li className="filters__item">일식</li>
-              {isMenuSearchVisible && (
-                <li className="modal-menuSearch" ref={menuSearchRef}>
-                  <div className="wrap">
-                    <input
-                      type="text"
-                      placeholder="음식점이나 메뉴를 검색해보세요."
-                    />
-                    <button className="modal-menuSearch__btn">
-                      <SearchIcon />
-                    </button>
-                  </div>
-                </li>
-              )}
+              <ModalMenuSearch
+                menuSearchRef={menuSearchRef}
+                isVisible={isMenuSearchVisible}
+              />
             </ul>
           </div>
         </div>
