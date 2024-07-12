@@ -3,7 +3,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import DeleteIcon from "@mui/icons-material/Delete";
 import QuantityCount from "../../../components/common/QuantityCount";
 
-const OrderSummary = () => {
+const OrderSummary = ({ orderItems, updateQuantity }) => {
+  const calculateTotal = () =>
+    orderItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
   return (
     <div className="order-summary">
       <div className="order-summary-content">
@@ -14,22 +17,28 @@ const OrderSummary = () => {
           </div>
         </div>
         <div className="order-summary__content-wrapper">
-          <div className="order-summary__content">
-            한마리 ＋ 순살치킨: New）수라깐풍, 크리스피 골드(국내산 순살), 콜라
-            500ml 기본
-          </div>
-          <div className="order-summary__price-quantity">
-            <div className="order-summary__wrap">
-              <div className="order-summary__delete-button">
-                <CloseIcon />
+          {orderItems.map((item, index) => (
+            <div key={index} className="order-summary__content">
+              <div>{item.name}</div>
+              <div className="order-summary__price-quantity">
+                <div className="order-summary__wrap">
+                  <div className="order-summary__delete-button">
+                    <CloseIcon />
+                  </div>
+                  <div className="order-summary__price">
+                    {item.price * item.quantity}원
+                  </div>
+                </div>
+                <QuantityCount
+                  quantity={item.quantity}
+                  onChange={quantity => updateQuantity(item.name, quantity)}
+                />
               </div>
-              <div className="order-summary__price">27,500원</div>
             </div>
-            <QuantityCount />
-          </div>
+          ))}
           <div className="order-summary__total-amount">
             <p>총 결제 금액</p>
-            <p>23,000원</p>
+            <p>{calculateTotal()}원</p>
           </div>
         </div>
       </div>
