@@ -42,7 +42,7 @@ function Header() {
         <nav className="nav">
           <ul className="nav__top">
             <li>
-              <Link to="/ceopage">주문이요사장님</Link>
+              <Link to="/owner">주문이요사장님</Link>
             </li>
             <li>
               <Link to="/admin">관리자</Link>

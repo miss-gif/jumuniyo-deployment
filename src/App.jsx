@@ -17,20 +17,30 @@ import MyPageOrderListPage from "./pages/user/mypagePage/MyPageOrderListPage";
 
 import Test from "./pages/Test";
 
+import OwnerLayout from "./components/layout/OwnerLayout";
+import OwnerSignupPage from "./pages/access/signupPage/OwnerSignupPage";
+import OwnerMenusPage from "./pages/owner/ownerMenusPage/OwnerMenusPage";
+import OwnerOrderHistoryPage from "./pages/owner/ownerOrderHistoryPage/OwnerOrderHistoryPage";
+import OwnerOrdersPage from "./pages/owner/ownerOrdersPage/OwnerOrdersPage";
+import OwnerPage from "./pages/owner/ownerPage/OwnerPage";
+import OwnerReviewsPage from "./pages/owner/ownerReviewsPage/OwnerReviewsPage";
+import OwnerStoresPage from "./pages/owner/ownerStoresPage/OwnerStoresPage";
+
 import HomePage from "./pages/user/homePage/HomePage";
-import PaymentPage from "./pages/user/paymentPage/PaymentPage";
-import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
-import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
-import MyPageOrderPage from "./pages/user/mypagePage/MyPageOrderPage";
-import MyPageLayout from "./pages/user/mypagePage/MyPageLayout";
-import MyPageReviewPage from "./pages/user/mypagePage/MyPageReviewPage";
-import MyPageProfile from "./pages/user/mypagePage/MyPageProfile";
+
 import MyPage from "./pages/user/mypagePage/MyPage";
 import MyPageAddrList from "./pages/user/mypagePage/MyPageAddress";
 import MyPageCardList from "./pages/user/mypagePage/MyPageCardList";
-import MyPageInquiryList from "./pages/user/mypagePage/MyPageInquiryList";
 import MyPageHelp from "./pages/user/mypagePage/MyPageHelp";
-import OwnerSignupPage from "./pages/access/signupPage/OwnerSignupPage";
+import MyPageInquiryList from "./pages/user/mypagePage/MyPageInquiryList";
+import MyPageLayout from "./pages/user/mypagePage/MyPageLayout";
+import MyPageOrderPage from "./pages/user/mypagePage/MyPageOrderPage";
+import MyPageProfile from "./pages/user/mypagePage/MyPageProfile";
+import MyPageReviewPage from "./pages/user/mypagePage/MyPageReviewPage";
+
+import PaymentPage from "./pages/user/paymentPage/PaymentPage";
+import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
+import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
 
 // 사업자
 
@@ -57,30 +67,34 @@ function App() {
             <Route path="/projectinfo" element={<ProjectInfo />} />
             <Route path="/orderview" element={<MyPageOrderPage />} />
             {/* 마이페이지 */}
-            <Route path="/" element={<MyPageLayout />}>
-              <Route path="/mypage" element={<MyPage />} />
-              <Route path="/mypage/edit" element={<MyPageProfile />} />
-              <Route
-                path="/mypage/orderlist"
-                element={<MyPageOrderListPage />}
-              />
-              <Route path="/mypage/order/:id" element={<MyPageOrderPage />} />
-              <Route path="/mypage/reviewlist" element={<MyPageReviewPage />} />
-              <Route path="/mypage/addrlist" element={<MyPageAddrList />} />
-              <Route path="/mypage/cardlist" element={<MyPageCardList />} />
-              <Route
-                path="/mypage/inquirylist"
-                element={<MyPageInquiryList />}
-              />
-              <Route path="/mypage/help" element={<MyPageHelp />} />
+            <Route path="/mypage" element={<MyPageLayout />}>
+              <Route index element={<MyPage />} />
+              <Route path="edit" element={<MyPageProfile />} />
+              <Route path="orderlist" element={<MyPageOrderListPage />} />
+              <Route path="order/:id" element={<MyPageOrderPage />} />
+              <Route path="reviewlist" element={<MyPageReviewPage />} />
+              <Route path="addrlist" element={<MyPageAddrList />} />
+              <Route path="cardlist" element={<MyPageCardList />} />
+              <Route path="inquirylist" element={<MyPageInquiryList />} />
+              <Route path="help" element={<MyPageHelp />} />
             </Route>
           </Route>
 
           {/* 사업자 라우터 */}
 
+          <Route path="/owner" element={<OwnerLayout />}>
+            <Route index element={<OwnerPage />} />
+            <Route path="menus" element={<OwnerMenusPage />} />
+            <Route path="order-history" element={<OwnerOrderHistoryPage />} />
+            <Route path="orders" element={<OwnerOrdersPage />} />
+            <Route path="reviews" element={<OwnerReviewsPage />} />
+            <Route path="stores" element={<OwnerStoresPage />} />
+            {/* Add a 404 "Not Found" route here if needed */}
+          </Route>
+
           {/* 관리자 라우터 */}
           <Route path="/admin" element={<AdminLayout />}>
-            <Route path="/admin/" element={<AdminPage />} />
+            <Route index element={<AdminPage />} />
           </Route>
 
           {/* 공통 */}
