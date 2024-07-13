@@ -7,9 +7,16 @@
     flex-direction: column;
     gap: $gap-3;
     width: 65%;
+    min-height: 1vh;
+    height: 100%;
   }
   &__right {
+    position: sticky;
+    top: 0;
     width: 35%;
+    min-height: 1vh;
+    height: 100%;
+    flex-shrink: 0;
   }
 }
 
