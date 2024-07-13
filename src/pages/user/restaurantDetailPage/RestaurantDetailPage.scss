@@ -1,5 +1,6 @@
 .restaurant-detail-page {
   display: flex;
+  justify-content: space-between;
   gap: $gap-3;
   &__left {
     display: flex;
