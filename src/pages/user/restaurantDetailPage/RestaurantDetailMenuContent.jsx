@@ -8,7 +8,7 @@ const RestaurantDetailMenuContent = ({ addToOrder }) => {
       <div className="carousel">
         <RestaurantDetailCarousel />
       </div>
-      <MenuCategory addToOrder={addToOrder} />
+      <MenuCategory addToOrder={addToOrder} title="인기메뉴" />
     </div>
   );
 };

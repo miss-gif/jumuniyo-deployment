@@ -1,14 +1,6 @@
-import React, { useState } from "react";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ToggleMenu from "../../../components/common/ToggleMenu";
 
-const MenuCategory = ({ addToOrder }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+const MenuCategory = ({ addToOrder, title }) => {
   const menuItems = [
     {
       name: "한마리 ＋ 순살치킨",
@@ -31,36 +23,24 @@ const MenuCategory = ({ addToOrder }) => {
   ];
 
   return (
-    <div className="menu-category">
-      <div className="toggle-category" onClick={toggleMenu}>
-        <h4 className="menu-category__title">인기메뉴</h4>
-        <div className="toggle-category-icon">
-          {isOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-        </div>
-      </div>
-      {isOpen && (
-        <ul className="menu-category__list">
-          {menuItems.map((item, index) => (
-            <li
-              key={index}
-              className="menu-category__item"
-              onClick={() => addToOrder(item)}
-            >
-              <div className="menu-category__text">
-                <div className="menu-category__name">{item.name}</div>
-                <div className="menu-category__description">
-                  {item.description}
-                </div>
-                <div className="menu-category__price">{item.price}원</div>
-              </div>
-              <div className="menu-category__image">
-                <img src={item.image} alt={item.name} />
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <ToggleMenu title={title}>
+      {menuItems.map((item, index) => (
+        <li
+          key={index}
+          className="menu-category__item"
+          onClick={() => addToOrder(item)}
+        >
+          <div className="menu-category__text">
+            <div className="menu-category__name">{item.name}</div>
+            <div className="menu-category__description">{item.description}</div>
+            <div className="menu-category__price">{item.price}원</div>
+          </div>
+          <div className="menu-category__image">
+            <img src={item.image} alt={item.name} />
+          </div>
+        </li>
+      ))}
+    </ToggleMenu>
   );
 };
 
