@@ -13,11 +13,14 @@ const CategoryNavigation = () => {
       <h2 className="hidden">카테고리 선택 메뉴</h2>
       <section className="category">
         <ul className="category__list">
-          <li className="category__item border-set">
+          <li className="category__item border-set bc">
             <p>전체보기</p>
           </li>
           {categories.map(category => (
-            <li key={category.categoryPk} className="category__item border-set">
+            <li
+              key={category.categoryPk}
+              className="category__item border-set bc"
+            >
               <p>{category.categoryName}</p>
             </li>
           ))}

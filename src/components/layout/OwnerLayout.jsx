@@ -10,8 +10,12 @@ const OwnerLayout = () => {
       <OwnerHeader />
       <div className="owner-content">
         <OwnerNav />
-        <Outlet />
-        <Footer />
+        <div className="main-wrap">
+          <main className="main">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   );
