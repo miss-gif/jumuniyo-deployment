@@ -53,6 +53,7 @@ function App() {
           <Route path="/" element={<AccountLayout />}>
             {/* 로그인 */}
             <Route path="/login" element={<LoginPage />} />
+
             {/* 회원가입 */}
             <Route path="/signup" element={<SignupChoice />} />
             <Route path="/signup/user" element={<UserSignupPage />} />
@@ -67,22 +68,22 @@ function App() {
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projectinfo" element={<ProjectInfo />} />
             <Route path="/orderview" element={<MyPageOrderPage />} />
-            {/* 마이페이지 */}
-            <Route path="/mypage" element={<MyPageLayout />}>
-              <Route index element={<MyPage />} />
-              <Route path="edit" element={<MyPageProfile />} />
-              <Route path="orderlist" element={<MyPageOrderListPage />} />
-              <Route path="order/:id" element={<MyPageOrderPage />} />
-              <Route path="reviewlist" element={<MyPageReviewPage />} />
-              <Route path="addrlist" element={<MyPageAddrList />} />
-              <Route path="cardlist" element={<MyPageCardList />} />
-              <Route path="inquirylist" element={<MyPageInquiryList />} />
-              <Route path="help" element={<MyPageHelp />} />
-            </Route>
+          </Route>
+
+          {/* 마이페이지 */}
+          <Route path="/mypage" element={<MyPageLayout />}>
+            <Route index element={<MyPage />} />
+            <Route path="edit" element={<MyPageProfile />} />
+            <Route path="orderlist" element={<MyPageOrderListPage />} />
+            <Route path="order/:id" element={<MyPageOrderPage />} />
+            <Route path="reviewlist" element={<MyPageReviewPage />} />
+            <Route path="addrlist" element={<MyPageAddrList />} />
+            <Route path="cardlist" element={<MyPageCardList />} />
+            <Route path="inquirylist" element={<MyPageInquiryList />} />
+            <Route path="help" element={<MyPageHelp />} />
           </Route>
 
           {/* 사업자 라우터 */}
-
           <Route path="/owner" element={<OwnerLayout />}>
             <Route index element={<OwnerPage />} />
             <Route path="menus" element={<OwnerMenusPage />} />

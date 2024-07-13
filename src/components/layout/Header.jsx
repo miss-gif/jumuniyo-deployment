@@ -6,7 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
-import Logo from "../common/Logo";
+import { Logo } from "../common/Logo";
 import { clearTokens } from "../../features/auth/authSlice"; // 로그아웃 액션 가져오기
 import { useCookies } from "react-cookie"; // useCookies 훅 가져오기
 

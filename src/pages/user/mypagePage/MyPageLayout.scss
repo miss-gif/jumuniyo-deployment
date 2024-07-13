@@ -1,50 +1,15 @@
 .mypage-layout {
   display: flex;
-}
-
-.mypage-header-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid $borderColor;
-  border-left: 1px solid $borderColor;
-  border-bottom: 1px solid $borderColor;
-}
-
-.mypage-header {
-  & button {
-    border-bottom: 1px solid $borderColor;
-    padding: 16px 20px;
-    &:last-child {
-      border-bottom: 0;
-    }
+  height: 100vh;
+  background-color: #999;
+  .inner {
+    background-color: #888;
+    width: 100%;
   }
 }
 
 .mypage-content {
+  background-color: #edf0f5;
+  padding: 20px;
   width: 100%;
-  border: 1px solid $borderColor;
-  padding: 8px;
-}
-
-@include tablet {
-  .mypage-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .mypage-header-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-bottom: 0;
-
-    & button {
-      border-right: 1px solid $borderColor;
-      max-width: 120px;
-      width: 100%;
-      &:last-child {
-        border-bottom: 1px solid $borderColor;
-      }
-    }
-  }
 }

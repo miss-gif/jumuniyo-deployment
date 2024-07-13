@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate, useLocation } from "react-router-dom";
+import "./MypageHeader.scss";
+import { Logo } from "../../../components/common/Logo";
 
 const NavButton = ({ path, currentPath, label }) => {
   const navigate = useNavigate();
@@ -39,6 +41,17 @@ const MypageHeader = () => {
 
   return (
     <div className="mypage-header">
+      <div className="mypage-header__logo">
+        <Logo />
+      </div>
+      <div className="mypage-header__profile">
+        <img src="https://picsum.photos/100/" alt="프로필 이미지" />
+        <p>닉네임</p>
+        <span>통합 매니저</span>
+      </div>
+      <div className="mypage-header__search">
+        <div className="mypage-header__search__status">영업중</div>
+      </div>
       <div className="mypage-header-list">
         {navItems.map(({ path, label }) => (
           <NavButton
