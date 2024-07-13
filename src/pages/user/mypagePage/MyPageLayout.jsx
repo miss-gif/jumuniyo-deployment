@@ -7,9 +7,9 @@ const MyPageLayout = () => {
     <div className="mypage-layout">
       <div className="inner">
         <MypageHeader />
-        <div className="mypage-content">
+        <main className="mypage-content">
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 .owner-nav {
-  width: 13.125rem;
+  width: 200px;
+  padding: 20px;
   background-color: #414b5a;
   color: #fff;
   font-weight: 500;
@@ -7,10 +8,7 @@
   &__profile {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 12.5rem;
-    padding: 30px 20px;
     // background-color: orange;
 
     img {
@@ -54,8 +52,7 @@
   &__wrap {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding: 20px;
+    padding: 20px 0;
     border-top: 1px solid #999;
   }
 

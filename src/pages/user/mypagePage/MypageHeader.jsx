@@ -4,18 +4,18 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./MypageHeader.scss";
 import { Logo } from "../../../components/common/Logo";
 
-const NavButton = ({ path, currentPath, label }) => {
+const NavButton = ({ path, label, currentPath }) => {
   const navigate = useNavigate();
 
-  const buttonStyle = {
-    backgroundColor: currentPath === path ? "#333" : "white",
-    color: currentPath === path ? "white" : "#333",
-  };
-
   return (
-    <button onClick={() => navigate(path)} style={buttonStyle}>
+    <li
+      className={`mypage-header__item ${
+        currentPath === path ? "mypage-header__item--active" : ""
+      }`}
+      onClick={() => navigate(path)}
+    >
       {label}
-    </button>
+    </li>
   );
 };
 
@@ -44,23 +44,27 @@ const MypageHeader = () => {
       <div className="mypage-header__logo">
         <Logo />
       </div>
-      <div className="mypage-header__profile">
-        <img src="https://picsum.photos/100/" alt="프로필 이미지" />
-        <p>닉네임</p>
-        <span>통합 매니저</span>
-      </div>
-      <div className="mypage-header__search">
-        <div className="mypage-header__search__status">영업중</div>
-      </div>
-      <div className="mypage-header-list">
-        {navItems.map(({ path, label }) => (
-          <NavButton
-            key={path}
-            path={path}
-            currentPath={currentPath}
-            label={label}
-          />
-        ))}
+      <div className="mypage-header__wrap">
+        <div className="mypage-header__profile">
+          <img src="https://picsum.photos/100/" alt="프로필 이미지" />
+          <p>1561</p>
+          <span>골드 등급</span>
+        </div>
+        <div className="mypage-header__search">
+          <div className="mypage-header__search__status">구독중</div>
+        </div>
+        <div className="mypage-header__wrap-list">
+          <div className="mypage-header__list">
+            {navItems.map(({ path, label }) => (
+              <NavButton
+                key={path}
+                path={path}
+                currentPath={currentPath}
+                label={label}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
