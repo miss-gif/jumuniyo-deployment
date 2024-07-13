@@ -30,7 +30,8 @@ const MypageHeader = () => {
   const currentPath = location.pathname;
 
   const navItems = [
-    { path: "/mypage", label: "마이페이지" },
+    { path: "/mypage", label: "홈" },
+    { path: "/mypage/profile", label: "내프로필" },
     { path: "/mypage/orderlist", label: "주문내역" },
     { path: "/mypage/reviewlist", label: "리뷰관리" },
     { path: "/mypage/addrlist", label: "주소관리" },

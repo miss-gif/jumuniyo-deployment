@@ -42,7 +42,7 @@ const LoginPage = () => {
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
       <div className="login__links">
-        <Link className="login__link" to="/auth">
+        <Link className="login__link" to="/signup">
           회원가입
         </Link>
         <Link className="login__link" to="/forgot-id">

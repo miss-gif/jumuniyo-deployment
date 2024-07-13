@@ -76,7 +76,7 @@ function App() {
           {/* 마이페이지 */}
           <Route path="/mypage" element={<MyPageLayout />}>
             <Route index element={<MyPage />} />
-            <Route path="edit" element={<MyPageProfile />} />
+            <Route path="profile" element={<MyPageProfile />} />
             <Route path="orderlist" element={<MyPageOrderListPage />} />
             <Route path="order/:id" element={<MyPageOrderPage />} />
             <Route path="reviewlist" element={<MyPageReviewPage />} />
