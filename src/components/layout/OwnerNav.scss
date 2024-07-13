@@ -45,6 +45,11 @@
     padding: 10px;
     border: 1px solid #fff;
     border-radius: 4px;
+    &:hover {
+      color: #00c4bd;
+      border: 1px solid #00c4bd;
+      cursor: pointer;
+    }
   }
 
   &__wrap {
@@ -70,7 +75,9 @@
     color: #fff;
     cursor: pointer;
 
-    &:hover,
+    &:hover {
+      color: #00c4bd;
+    }
     &--active {
       background-color: #333;
     }
