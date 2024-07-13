@@ -1,7 +1,12 @@
 import React from "react";
+import MypageTop from "./MypageTop";
 
 const MyPage = () => {
-  return <div>MyPage</div>;
+  return (
+    <>
+      <MypageTop />
+    </>
+  );
 };
 
 export default MyPage;
