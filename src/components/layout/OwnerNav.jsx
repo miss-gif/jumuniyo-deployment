@@ -5,14 +5,14 @@ const NavButton = ({ path, label, currentPath }) => {
   const navigate = useNavigate();
 
   return (
-    <button
-      className={`owner-nav__button ${
-        currentPath === path ? "owner-nav__button--active" : ""
+    <li
+      className={`owner-nav__item ${
+        currentPath === path ? "owner-nav__item--active" : ""
       }`}
       onClick={() => navigate(path)}
     >
       {label}
-    </button>
+    </li>
   );
 };
 
@@ -38,22 +38,19 @@ const OwnerNav = () => {
         <span>통합 매니저</span>
       </div>
       <div className="owner-nav__search">
-        <div className="owner-nav__status">영업중</div>
-        <input
-          className="owner-nav__input"
-          type="text"
-          placeholder="입력 후 검색하세요"
-        />
+        <div className="owner-nav__search__status">영업중</div>
       </div>
-      <div className="owner-nav__list">
-        {navItems.map(({ path, label }) => (
-          <NavButton
-            key={path}
-            path={path}
-            currentPath={currentPath}
-            label={label}
-          />
-        ))}
+      <div className="owner-nav__wrap">
+        <ul className="owner-nav__list">
+          {navItems.map(({ path, label }) => (
+            <NavButton
+              key={path}
+              path={path}
+              currentPath={currentPath}
+              label={label}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   );
