@@ -42,6 +42,8 @@ import PaymentPage from "./pages/user/paymentPage/PaymentPage";
 import RestaurantDetailPage from "./pages/user/restaurantDetailPage/RestaurantDetailPage";
 import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
 import OwnerDashboardPage from "./pages/owner/ownerDashboardPage/OwnerDashboardPage";
+import LoginPage2 from "./pages/access/LoginPage2";
+import LoginPage3 from "./pages/access/LoginPage3";
 
 // 사업자
 
@@ -53,6 +55,8 @@ function App() {
           <Route path="/" element={<AccountLayout />}>
             {/* 로그인 */}
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/login2" element={<LoginPage2 />} />
+            <Route path="/login3" element={<LoginPage3 />} />
 
             {/* 회원가입 */}
             <Route path="/signup" element={<SignupChoice />} />

@@ -12,7 +12,12 @@ const AccessHeader = () => {
           />
         </Link>
       </h1>
-      <h2 className="access-header-title">로그인</h2>
+      <a href="login2" className="access-header-title">
+        사장님
+      </a>
+      <a href="login3" className="access-header-title">
+        관리자
+      </a>
     </div>
   );
 };
