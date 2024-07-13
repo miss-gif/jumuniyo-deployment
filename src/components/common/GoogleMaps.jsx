@@ -49,23 +49,39 @@ const GoogleMaps = ({ latitude, longitude }) => {
 
   useEffect(() => {
     if (latitude && longitude) {
-      if (!geocoderService.current && window.google) {
-        geocoderService.current = new window.google.maps.Geocoder();
+      const initializeGeocoder = () => {
+        if (!geocoderService.current && window.google) {
+          geocoderService.current = new window.google.maps.Geocoder();
+        }
+
+        const latlng = {
+          lat: parseFloat(latitude),
+          lng: parseFloat(longitude),
+        };
+
+        if (geocoderService.current) {
+          geocoderService.current.geocode(
+            { location: latlng },
+            (results, status) => {
+              if (status === "OK" && results[0]) {
+                setValue(results[0]);
+                setInputValue(results[0].formatted_address);
+              } else {
+                console.error("지오코딩에 실패했습니다.");
+              }
+            },
+          );
+        } else {
+          console.error("Geocoder 서비스가 초기화되지 않았습니다.");
+        }
+      };
+
+      // 구글 맵 스크립트가 로드되었는지 확인
+      if (window.google) {
+        initializeGeocoder();
+      } else {
+        console.error("Google Maps API가 아직 로드되지 않았습니다.");
       }
-
-      const latlng = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
-
-      geocoderService.current.geocode(
-        { location: latlng },
-        (results, status) => {
-          if (status === "OK" && results[0]) {
-            setValue(results[0]);
-            setInputValue(results[0].formatted_address);
-          } else {
-            console.error("지오코딩에 실패했습니다.");
-          }
-        },
-      );
     }
   }, [latitude, longitude]);
 
