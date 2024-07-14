@@ -50,12 +50,6 @@ function Header() {
           </ul>
           <ul className="nav__list">
             <li className="nav__item">
-              <Link to="/restaurants">주문하기</Link>
-            </li>
-            <li className="nav__item">
-              <Link to="/restaurantdetail/1">음식점 상세</Link>
-            </li>
-            <li className="nav__item">
               <Link to="/payment">결제하기</Link>
             </li>
             <li className="nav__item">
