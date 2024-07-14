@@ -13,7 +13,7 @@ function RootLayout() {
   // 위치 검색 사용 시 path 등록
   const myPagePaths = ["/restaurants"];
   // 음식점 카테고리 필터 시 사용 path 등록
-  const restaurantsPaths = ["/restaurants"];
+  const restaurantsPaths = ["/restaurants", "/restaurantdetail"];
 
   const isHomePage = location.pathname === "/";
   const isMyPagePath = myPagePaths.some(path =>
