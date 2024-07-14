@@ -56,16 +56,7 @@ $height: 44px;
 }
 
 .location-search {
-  // 랩박스
-  .css-1oz3td-MuiAutocomplete-root {
-    width: 100% !important;
-  }
-
   .MuiOutlinedInput-root {
     height: $height;
-  }
-
-  .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root {
-    border-radius: 0 !important;
   }
 }

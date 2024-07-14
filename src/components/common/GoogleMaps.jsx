@@ -156,8 +156,7 @@ const GoogleMaps = ({ latitude, longitude }) => {
 
   return (
     <Autocomplete
-      id="google-map-demo"
-      sx={{ width: 300 }}
+      sx={{ width: "100%" }}
       getOptionLabel={option =>
         typeof option === "string"
           ? option
@@ -179,6 +178,11 @@ const GoogleMaps = ({ latitude, longitude }) => {
           {...params}
           placeholder="건물명, 도로명, 지번으로 검색하세요."
           fullWidth
+          sx={{
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderRadius: "0",
+            },
+          }}
         />
       )}
       renderOption={(props, option) => {
