@@ -1,0 +1,91 @@
+.mypage-addr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__heading {
+    font-size: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    border-bottom: 3px solid #999;
+    &-item {
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    padding: 20px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #fff;
+    padding: 12px;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__name {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    &__contact {
+      font-size: 14px;
+      color: #999;
+    }
+    &__address {
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 4px;
+    &--edit {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    &--delete {
+      background-color: #f44336;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+  }
+
+  &__info {
+    background-color: #f3f5f7;
+    color: #999;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  &__button {
+    &--add {
+      background-color: #2196f3;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

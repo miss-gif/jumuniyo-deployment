@@ -34,7 +34,7 @@ const MypageHeader = () => {
     { path: "/mypage/profile", label: "내프로필" },
     { path: "/mypage/orderlist", label: "주문내역" },
     { path: "/mypage/reviewlist", label: "리뷰관리" },
-    { path: "/mypage/addrlist", label: "주소관리" },
+    { path: "/mypage/addrlist", label: "배송지 관리" },
     { path: "/mypage/cardlist", label: "카드관리" },
     { path: "/mypage/inquirylist", label: "문의내역" },
     { path: "/mypage/help", label: "고객센터" },
