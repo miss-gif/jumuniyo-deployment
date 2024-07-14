@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { fetchRestaurantlist } from "../api/fetchRestaurantlist";
+import React from "react";
 import { Link } from "react-router-dom";
+import useFetchRestaurantData from "../hooks/useFetchRestaurantData";
 
 const Test2 = () => {
-  const [restaurantData, setRestaurantData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const fetchData = async () => {
-    setIsLoading(true);
-    try {
-      const data = await fetchRestaurantlist();
-      setRestaurantData(data); // 받아온 데이터를 바로 저장 (이미 list 형태)
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData(); // 컴포넌트 마운트 시 초기 데이터 가져오기
-  }, []);
+  const { restaurantData, isLoading, error, fetchData } =
+    useFetchRestaurantData();
 
   return (
     <div>
