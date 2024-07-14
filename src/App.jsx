@@ -44,6 +44,7 @@ import RestaurantsPage from "./pages/user/restaurantListPage/RestaurantsPage";
 import OwnerDashboardPage from "./pages/owner/ownerDashboardPage/OwnerDashboardPage";
 import LoginPage2 from "./pages/access/LoginPage2";
 import LoginPage3 from "./pages/access/LoginPage3";
+import Test2 from "./pages/Test2";
 
 // 사업자
 
@@ -109,6 +110,7 @@ function App() {
           {/* 공통 */}
           <Route path="*" element={<NotFound />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/test2" element={<Test2 />} />
         </Routes>
       </div>
     </>
