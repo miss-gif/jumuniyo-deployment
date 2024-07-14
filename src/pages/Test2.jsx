@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchRestaurantlist } from "../api/fetchRestaurantlist";
+import { Link } from "react-router-dom";
 
 const Test2 = () => {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -36,7 +37,9 @@ const Test2 = () => {
           <ul>
             {restaurantData.map(restaurant => (
               <li key={restaurant.restaurantPk}>
-                {restaurant.restaurantName} - {restaurant.restaurantAddr}
+                <Link to={`/restaurantdetail/${restaurant.restaurantPk}`}>
+                  {restaurant.restaurantName} - {restaurant.restaurantAddr}
+                </Link>
               </li>
             ))}
           </ul>
