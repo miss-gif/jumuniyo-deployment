@@ -146,8 +146,16 @@ const GoogleMaps = ({ latitude, longitude }) => {
         { placeId: newValue.place_id },
         (place, status) => {
           if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-            console.log("Latitude:", place.geometry.location.lat());
-            console.log("Longitude:", place.geometry.location.lng());
+            const latitude = place.geometry.location.lat();
+            const longitude = place.geometry.location.lng();
+            console.log("Latitude:", latitude);
+            console.log("Longitude:", longitude);
+
+            // 세션에 위치 데이터 저장
+            localStorage.setItem(
+              "locationData",
+              JSON.stringify({ latitude, longitude }),
+            );
           }
         },
       );
