@@ -29,7 +29,7 @@ import OwnerStoresPage from "./pages/owner/ownerStoresPage/OwnerStoresPage";
 import HomePage from "./pages/user/homePage/HomePage";
 
 import MyPage from "./pages/user/mypagePage/MyPage";
-import MyPageAddrList from "./pages/user/mypagePage/MyPageAddress";
+import MyPageAddrList from "./pages/user/mypagePage/MyPageAddrList";
 import MyPageCardList from "./pages/user/mypagePage/MyPageCardList";
 import MyPageHelp from "./pages/user/mypagePage/MyPageHelp";
 import MyPageInquiryList from "./pages/user/mypagePage/MyPageInquiryList";
