@@ -50,6 +50,9 @@
             padding: 6px;
             color: $borderColor;
           }
+          &:last-child::after {
+            content: "";
+          }
         }
       }
     }
