@@ -19,6 +19,7 @@ const RestaurantDetailPage = () => {
     console.log("id", id);
   }, []);
 
+  // 주문표 기능
   const addToOrder = item => {
     setOrderItems(prevItems => {
       const existingItem = prevItems.find(
@@ -35,7 +36,7 @@ const RestaurantDetailPage = () => {
       }
     });
   };
-
+  // 주문표 기능
   const updateQuantity = (itemName, quantity) => {
     setOrderItems(prevItems =>
       prevItems.map(item =>
@@ -47,11 +48,18 @@ const RestaurantDetailPage = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "menu":
-        return <RestaurantDetailMenuContent addToOrder={addToOrder} />;
+        return (
+          <RestaurantDetailMenuContent
+            addToOrder={addToOrder}
+            restaurantDetails={restaurantDetails}
+          />
+        );
       case "review":
         return <RestaurantDetailCleanReview />;
       case "info":
-        return <RestaurantDetailTabInfo />;
+        return (
+          <RestaurantDetailTabInfo restaurantDetails={restaurantDetails} />
+        );
       default:
         return null;
     }
@@ -68,9 +76,12 @@ const RestaurantDetailPage = () => {
   return (
     <div className="restaurant-detail-page">
       <div className="restaurant-detail-page__left">
-        <RestaurantDetailInfo />
+        <RestaurantDetailInfo restaurantDetails={restaurantDetails} />
         <div className="restaurant-detail-page__menu">
-          <RestaurantDetailHeader setActiveTab={setActiveTab} />
+          <RestaurantDetailHeader
+            setActiveTab={setActiveTab}
+            restaurantDetails={restaurantDetails}
+          />
           <div>{renderContent()}</div>
         </div>
       </div>

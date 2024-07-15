@@ -12,7 +12,6 @@ const useRestaurantDetails = restaurantId => {
       try {
         const data = await fetchRestaurantDetails(restaurantId);
         setRestaurantDetails(data.resultData);
-        console.log("data.resultData", data.resultData);
       } catch (error) {
         setError(error);
       } finally {

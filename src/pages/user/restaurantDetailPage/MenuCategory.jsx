@@ -1,26 +1,12 @@
 import ToggleMenu from "../../../components/common/ToggleMenu";
 
-const MenuCategory = ({ addToOrder, title }) => {
-  const menuItems = [
-    {
-      name: "한마리 ＋ 순살치킨",
-      description: "국내산 하림닭 ／ 가심비 두 배 세트!",
-      price: 23000,
-      image: "https://picsum.photos/100/",
-    },
-    {
-      name: "한마리 ＋ 간장치킨",
-      description: "국내산 하림닭 ／ 가심비 두 배 세트!",
-      price: 23000,
-      image: "https://picsum.photos/100/",
-    },
-    {
-      name: "한마리 ＋ 양념치킨",
-      description: "국내산 하림닭 ／ 가심비 두 배 세트!",
-      price: 23000,
-      image: "https://picsum.photos/100/",
-    },
-  ];
+const MenuCategory = ({ addToOrder, title, restaurantDetails }) => {
+  const menuItems = restaurantDetails.menuList.map(menu => ({
+    name: menu.menu_name,
+    description: menu.menu_content,
+    price: menu.menu_price,
+    image: menu.menu_pic || "https://picsum.photos/100/", // Default image if none provided
+  }));
 
   return (
     <ToggleMenu title={title}>

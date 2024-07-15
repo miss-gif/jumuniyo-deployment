@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 
-const RestaurantDetailTabInfo = () => {
+const RestaurantDetailTabInfo = restaurantDetails => {
+  console.log(restaurantDetails);
+
   return (
     <div className="restaurant-detail-tab-info">
       <div className="restaurant-detail-tab-info__wrap">
