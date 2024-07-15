@@ -15,10 +15,6 @@ const RestaurantDetailPage = () => {
   const [activeTab, setActiveTab] = useState("menu");
   const [orderItems, setOrderItems] = useState([]);
 
-  useEffect(() => {
-    console.log("id", id);
-  }, []);
-
   // 주문표 기능
   const addToOrder = item => {
     setOrderItems(prevItems => {
