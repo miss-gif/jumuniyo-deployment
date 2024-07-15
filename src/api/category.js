@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "/api/category";
+const API_URL = "/api/restaurant/category";
 
 export const fetchCategories = async () => {
   const { data } = await axios.get(API_URL);

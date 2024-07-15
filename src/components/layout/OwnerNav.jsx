@@ -30,12 +30,17 @@ const OwnerNav = () => {
     { path: "/owner/dashboard", label: "통계" },
   ];
 
+  const UID_Data = {
+    name: "string",
+    rank: "실버",
+  };
+
   return (
     <div className="owner-nav">
       <div className="owner-nav__profile">
         <img src="https://picsum.photos/100/" alt="프로필 이미지" />
-        <p>닉네임</p>
-        <span>통합 매니저</span>
+        <p>{UID_Data.name}</p>
+        <span>{UID_Data.rank}</span>
       </div>
       <div className="owner-nav__search">
         <div className="owner-nav__search__status">영업중</div>
