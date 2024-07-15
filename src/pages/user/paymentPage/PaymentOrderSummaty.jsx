@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const PaymentOrderSummaty = () => {
+  const [orderItems, setOrderItems] = useState([]);
+
+  const calculateTotal = () =>
+    orderItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+  useEffect(() => {
+    // 세션에서 orderItems 값 가져오기 (여기서는 localStorage에서 가져오는 것으로 가정)
+    const storedOrderItems = sessionStorage.getItem("orderItems");
+    if (storedOrderItems) {
+      setOrderItems(JSON.parse(storedOrderItems));
+    }
+  }, []);
+
   return (
     <div className="payment-page__order-summary">
       <h2 className="payment-page__title">주문내역</h2>
@@ -9,30 +22,20 @@ const PaymentOrderSummaty = () => {
           뉴욕버거앤치킨-대구남산점
         </h3>
         <ul>
-          <li className="payment-page__order-item">
-            <p>
-              우삼겹 투움바 파스타 <span>x 1개</span>
-            </p>
-            <p>23,000원</p>
-          </li>
-          <li className="payment-page__order-item">
-            <p>
-              우삼겹 투움바 파스타 <span>x 1개</span>
-            </p>
-            <p>23,000원</p>
-          </li>
-          <li className="payment-page__order-item">
-            <p>
-              우삼겹 투움바 파스타 <span>x 1개</span>
-            </p>
-            <p>23,000원</p>
-          </li>
+          {orderItems.map((item, index) => (
+            <li key={index} className="payment-page__order-item">
+              <p>
+                {item.name} <span>x {item.quantity}개</span>
+              </p>
+              <p>{item.price.toLocaleString()}원</p>
+            </li>
+          ))}
         </ul>
 
         {/* 결제 */}
         <div className="payment-page__total-amount">
           <p>총 결제 금액</p>
-          <p>23,000원</p>
+          <p>{calculateTotal()}원</p>
         </div>
       </div>
       <p className="payment-page__terms">

@@ -2,8 +2,11 @@ import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import DeleteIcon from "@mui/icons-material/Delete";
 import QuantityCount from "../../../components/common/QuantityCount";
+import { useNavigate } from "react-router-dom";
 
 const OrderSummary = ({ orderItems, updateQuantity }) => {
+  const navigate = useNavigate();
+
   const calculateTotal = () =>
     orderItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
@@ -14,6 +17,7 @@ const OrderSummary = ({ orderItems, updateQuantity }) => {
     // 세션 스토리지에서 값을 불러와 콘솔에 출력
     const storedOrderItems = sessionStorage.getItem("orderItems");
     console.log("Stored Order Items:", JSON.parse(storedOrderItems));
+    navigate("/payment");
   };
 
   return (
