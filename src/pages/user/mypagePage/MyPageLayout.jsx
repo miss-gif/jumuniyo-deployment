@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import MypageHeader from "./MypageHeader";
+import Footer from "../../../components/layout/Footer";
 
 const MyPageLayout = () => {
   return (
@@ -8,7 +9,10 @@ const MyPageLayout = () => {
       <div className="inner">
         <MypageHeader />
         <main className="mypage-content">
-          <Outlet />
+          <div className="mypage-cover">
+            <Outlet />
+          </div>
+          <Footer />
         </main>
       </div>
     </div>

@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const NavButton = ({ path, label, currentPath }) => {
+const SideNavItemStyle = ({ path, label, currentPath }) => {
   const navigate = useNavigate();
 
   return (
     <li
-      className={`owner-nav__item ${
-        currentPath === path ? "owner-nav__item--active" : ""
+      className={`side-nav__item ${
+        currentPath === path ? "side-nav__item--active" : ""
       }`}
       onClick={() => navigate(path)}
     >
@@ -16,11 +16,11 @@ const NavButton = ({ path, label, currentPath }) => {
   );
 };
 
-const OwnerNav = () => {
+const SideNav = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const navItems = [
+  const sideNavItem = [
     { path: "/owner", label: "홈" },
     { path: "/owner/menus", label: "메뉴관리" },
     { path: "/owner/order-history", label: "주문관리" },
@@ -35,20 +35,24 @@ const OwnerNav = () => {
     rank: "실버",
   };
 
+  const state = "영업중";
+
   return (
-    <div className="owner-nav">
-      <div className="owner-nav__profile">
+    <div className="side-nav">
+      <div className="side-nav__profile">
         <img src="https://picsum.photos/100/" alt="프로필 이미지" />
-        <p>{UID_Data.name}</p>
-        <span>{UID_Data.rank}</span>
+        <div className="side-nav__uid-data">
+          <p>{UID_Data.name}</p>
+          <span>{UID_Data.rank}</span>
+        </div>
+        <div className="side-nav__search">
+          <div className="side-nav__search__status">{state}</div>
+        </div>
       </div>
-      <div className="owner-nav__search">
-        <div className="owner-nav__search__status">영업중</div>
-      </div>
-      <div className="owner-nav__wrap">
-        <ul className="owner-nav__list">
-          {navItems.map(({ path, label }) => (
-            <NavButton
+      <div className="side-nav__wrap">
+        <ul className="side-nav__list">
+          {sideNavItem.map(({ path, label }) => (
+            <SideNavItemStyle
               key={path}
               path={path}
               currentPath={currentPath}
@@ -61,4 +65,4 @@ const OwnerNav = () => {
   );
 };
 
-export default OwnerNav;
+export default SideNav;

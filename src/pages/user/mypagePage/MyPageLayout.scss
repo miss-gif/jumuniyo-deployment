@@ -6,7 +6,11 @@
 }
 
 .mypage-content {
-  width: 100%;
-  padding: 28px;
+  width: calc(100% - 200px);
+  padding: 28px 28px 0;
   background-color: #fff;
+}
+
+.mypage-cover {
+  min-height: 50vh;
 }

@@ -1,16 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./MypageHeader.scss";
 import { Logo } from "../../../components/common/Logo";
+import styled from "@emotion/styled";
 
-const NavButton = ({ path, label, currentPath }) => {
+const SideNavItemStyle = ({ path, label, currentPath }) => {
   const navigate = useNavigate();
 
   return (
     <li
-      className={`mypage-header__item ${
-        currentPath === path ? "mypage-header__item--active" : ""
+      className={`side-nav__item ${
+        currentPath === path ? "side-nav__item--active" : ""
       }`}
       onClick={() => navigate(path)}
     >
@@ -19,17 +18,11 @@ const NavButton = ({ path, label, currentPath }) => {
   );
 };
 
-NavButton.propTypes = {
-  path: PropTypes.string.isRequired,
-  currentPath: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-};
-
-const MypageHeader = () => {
+const SideNav = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const navItems = [
+  const sideNavItem = [
     { path: "/mypage", label: "홈" },
     { path: "/mypage/profile", label: "내프로필" },
     { path: "/mypage/orderlist", label: "주문내역" },
@@ -40,35 +33,49 @@ const MypageHeader = () => {
     { path: "/mypage/help", label: "고객센터" },
   ];
 
+  const UID_Data = {
+    name: "아이디",
+    rank: "실버",
+  };
+
+  const state = "구독패스 ON";
+
   return (
-    <div className="mypage-header">
-      <div className="mypage-header__logo">
+    <div className="side-nav">
+      <LogoStyle className="side-nav__logo">
         <Logo />
+      </LogoStyle>
+      <div className="side-nav__profile">
+        <img src="https://picsum.photos/100/" alt="프로필 이미지" />
+        <div className="side-nav__uid-data">
+          <p>{UID_Data.name}</p>
+          <span>{UID_Data.rank}</span>
+        </div>
+        <div className="side-nav__search">
+          <div className="side-nav__search__status">{state}</div>
+        </div>
       </div>
-      <div className="mypage-header__wrap">
-        <div className="mypage-header__profile">
-          <img src="https://picsum.photos/100/" alt="프로필 이미지" />
-          <p>1561</p>
-          <span>골드 등급</span>
-        </div>
-        <div className="mypage-header__search">
-          <div className="mypage-header__search__status">구독중</div>
-        </div>
-        <div className="mypage-header__wrap-list">
-          <div className="mypage-header__list">
-            {navItems.map(({ path, label }) => (
-              <NavButton
-                key={path}
-                path={path}
-                currentPath={currentPath}
-                label={label}
-              />
-            ))}
-          </div>
-        </div>
+      <div className="side-nav__wrap">
+        <ul className="side-nav__list">
+          {sideNavItem.map(({ path, label }) => (
+            <SideNavItemStyle
+              key={path}
+              path={path}
+              currentPath={currentPath}
+              label={label}
+            />
+          ))}
+        </ul>
       </div>
     </div>
   );
 };
 
-export default MypageHeader;
+export default SideNav;
+
+const LogoStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+`;

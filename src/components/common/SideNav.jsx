@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./SideNav.scss";
 
 const SideNavItemStyle = ({ path, label, currentPath }) => {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const SideNav = () => {
   const currentPath = location.pathname;
 
   const sideNavItem = [
-    { path: "/test2", label: "홈" },
+    { path: "/owner", label: "홈" },
     { path: "/owner/menus", label: "메뉴관리" },
     { path: "/owner/order-history", label: "주문관리" },
     { path: "/owner/orders", label: "주문내역" },
