@@ -1,17 +1,28 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 
-const RestaurantDetailTabInfo = restaurantDetails => {
-  console.log(restaurantDetails);
+const RestaurantDetailTabInfo = ({ restaurantDetails }) => {
+  const {
+    restaurantName,
+    restaurantDesc,
+    reviewScore,
+    reviewDesc,
+    reviewTotalElements,
+    restaurantAddr,
+    regiNum,
+    openTime,
+    closeTime,
+    restaurantPic,
+    restaurantState,
+    menuList,
+  } = restaurantDetails;
 
   return (
     <div className="restaurant-detail-tab-info">
       <div className="restaurant-detail-tab-info__wrap">
         <div className="restaurant-detail-tab-info__title">사장님알림</div>
         <div className="restaurant-detail-tab-info__content">
-          파스토보이 교대점은 코로나 감염 예방을 위해 마스크 쓰기, 수시로 손씻기
-          등을 실천하고 있습니다. 안전하고 맛있는 음식을 배달해드리기 위해
-          노력하겠습니다.
+          {restaurantDesc}
         </div>
       </div>
       <div className="restaurant-detail-tab-info__wrap">
@@ -20,7 +31,7 @@ const RestaurantDetailTabInfo = restaurantDetails => {
           <div className="restaurant-detail-tab-info__info">
             <p className="restaurant-detail-tab-info__info-title">영업시간</p>
             <p className="restaurant-detail-tab-info__info-detail">
-              09:00 - 08:59
+              {openTime} - {closeTime}
             </p>
           </div>
           <div className="restaurant-detail-tab-info__info">
@@ -32,7 +43,7 @@ const RestaurantDetailTabInfo = restaurantDetails => {
           <div className="restaurant-detail-tab-info__info">
             <p className="restaurant-detail-tab-info__info-title">주소</p>
             <p className="restaurant-detail-tab-info__info-detail">
-              대구광역시 남구 대명동 1792-8 2층
+              {restaurantAddr}
             </p>
           </div>
           <div className="restaurant-detail-tab-info__info">
@@ -67,9 +78,7 @@ const RestaurantDetailTabInfo = restaurantDetails => {
             <p className="restaurant-detail-tab-info__info-title">
               사업자등록번호
             </p>
-            <p className="restaurant-detail-tab-info__info-detail">
-              148-86-01339
-            </p>
+            <p className="restaurant-detail-tab-info__info-detail">{regiNum}</p>
           </div>
         </div>
       </div>
