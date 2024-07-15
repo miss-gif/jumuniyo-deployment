@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useFetchRestaurantData from "../hooks/useFetchRestaurantData";
+import SideNav from "../components/common/SideNav";
 
 const Test2 = () => {
   const { restaurantData, isLoading, error, fetchData } =
@@ -28,6 +29,8 @@ const Test2 = () => {
           </ul>
         </div>
       )}
+
+      <SideNav />
     </div>
   );
 };
