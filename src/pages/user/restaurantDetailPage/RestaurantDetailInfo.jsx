@@ -1,18 +1,32 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 
-const RestaurantDetailInfo = () => {
+const RestaurantDetailInfo = ({ restaurantDetails }) => {
+  const {
+    restaurantName,
+    restaurantDesc,
+    reviewScore,
+    reviewDesc,
+    reviewTotalElements,
+    restaurantAddr,
+    regiNum,
+    openTime,
+    closeTime,
+    restaurantPic,
+    restaurantState,
+    menuList,
+  } = restaurantDetails;
+
   return (
     <div className="restaurant-detail-page__info">
-      <h2 className="restaurant-detail-page__info-name">
-        호식이두마리치킨-대명1호점
-      </h2>
+      <h2 className="restaurant-detail-page__info-name">{restaurantName}</h2>
       <div className="restaurant-detail-page__info-content">
         <div className="restaurant-detail-page__info-image">
-          <img src="https://picsum.photos/100/" alt="" />
+          <img src={restaurantPic} alt={restaurantPic} />
         </div>
         <div className="restaurant-detail-page__info-details">
           <div className="restaurant-detail-page__info-rating">
-            <span>★★★★★</span> <p>4.9</p>
+            <span>★★★★★</span> <p>{reviewScore}</p>
           </div>
           <p className="restaurant-detail-page__info-payment">
             <span className="gray">결제</span> 신용카드 , 현금 , 웹 결제
@@ -20,8 +34,7 @@ const RestaurantDetailInfo = () => {
         </div>
       </div>
       <p className="restaurant-detail-page__info-notice">
-        <span>사장님알림</span> 💜💙💛❤언제나 즐거운 리뷰 이벤트💜💙💛❤
-        🖤호식이두마리치킨대명1호점
+        <span>사장님알림</span> {restaurantDesc}
       </p>
     </div>
   );
