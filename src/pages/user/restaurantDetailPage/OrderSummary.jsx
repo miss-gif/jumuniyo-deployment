@@ -7,6 +7,15 @@ const OrderSummary = ({ orderItems, updateQuantity }) => {
   const calculateTotal = () =>
     orderItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
+  const handleOrder = () => {
+    // orderItems를 세션 스토리지에 저장
+    sessionStorage.setItem("orderItems", JSON.stringify(orderItems));
+
+    // 세션 스토리지에서 값을 불러와 콘솔에 출력
+    const storedOrderItems = sessionStorage.getItem("orderItems");
+    console.log("Stored Order Items:", JSON.parse(storedOrderItems));
+  };
+
   return (
     <div className="order-summary">
       <div className="order-summary-content">
@@ -42,7 +51,12 @@ const OrderSummary = ({ orderItems, updateQuantity }) => {
           </div>
         </div>
       </div>
-      <div className="order-summary__submit-button">주문하기</div>
+      <div
+        className="order-summary__submit-button"
+        onClick={handleOrder} // 주문하기 버튼에 클릭 핸들러 추가
+      >
+        주문하기
+      </div>
     </div>
   );
 };
