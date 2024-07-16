@@ -5,13 +5,16 @@ import { useCookies } from "react-cookie";
 const MyPageProfile = () => {
   const [cookies] = useCookies(["accessToken"]);
 
+  const API_URL = "/api/user-info";
+  const TOKEN = {
+    headers: {
+      Authorization: `Bearer ${cookies.accessToken}`,
+    },
+  };
+
   const aaa = async () => {
     try {
-      const res = await axios.get("/api/user-info", {
-        headers: {
-          Authorization: `Bearer ${cookies.accessToken}`,
-        },
-      });
+      const res = await axios.get(API_URL, TOKEN);
       console.log(res);
     } catch (error) {
       console.log(error);
