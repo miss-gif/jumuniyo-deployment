@@ -1,6 +1,25 @@
+import axios from "axios";
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 const MyPageProfile = () => {
+  const [cookies] = useCookies(["accessToken"]);
+
+  const aaa = async () => {
+    try {
+      const res = await axios.get("/api/user-info", {
+        headers: {
+          Authorization: `Bearer ${cookies.accessToken}`,
+        },
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  aaa();
+
   const [isEditing, setIsEditing] = useState({
     아이디: false,
     닉네임: false,
