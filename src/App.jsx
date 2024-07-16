@@ -45,6 +45,7 @@ import OwnerDashboardPage from "./pages/owner/ownerDashboardPage/OwnerDashboardP
 import LoginPage2 from "./pages/access/LoginPage2";
 import LoginPage3 from "./pages/access/LoginPage3";
 import Test2 from "./pages/Test2";
+import Test3 from "./pages/Test3";
 
 // 사업자
 
@@ -111,6 +112,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/test" element={<Test />} />
           <Route path="/test2" element={<Test2 />} />
+          <Route path="/test3" element={<Test3 />} />
         </Routes>
       </div>
     </>
