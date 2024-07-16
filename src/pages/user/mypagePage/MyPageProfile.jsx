@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 
 const MyPageProfile = () => {
   const [cookies] = useCookies(["accessToken"]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const API_URL = "/api/user-info";
   const TOKEN = {
@@ -12,34 +14,46 @@ const MyPageProfile = () => {
     },
   };
 
-  const aaa = async () => {
-    try {
-      const res = await axios.get(API_URL, TOKEN);
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  aaa();
+  const [profile, setProfile] = useState({
+    userId: "",
+    userName: "",
+    userNickname: "",
+    userPhone: "",
+    mainAddr: "",
+  });
 
   const [isEditing, setIsEditing] = useState({
-    아이디: false,
-    닉네임: false,
-    이름: false,
-    전화번호: false,
-    주소: false,
-    이메일: false,
+    userId: false,
+    userNickname: false,
+    userName: false,
+    userPhone: false,
+    mainAddr: false,
   });
 
-  const [profile, setProfile] = useState({
-    아이디: "",
-    닉네임: "",
-    이름: "",
-    전화번호: "",
-    주소: "",
-    이메일: "",
-  });
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const res = await axios.get(API_URL, TOKEN);
+        if (res.data.statusCode === 1) {
+          setProfile({
+            userId: res.data.resultData.userId,
+            userName: res.data.resultData.userName,
+            userNickname: res.data.resultData.userNickname,
+            userPhone: res.data.resultData.userPhone,
+            mainAddr: res.data.resultData.mainAddr || "",
+          });
+        } else {
+          setError(res.data.resultMsg);
+        }
+      } catch (error) {
+        setError("정보를 가져오는 중 오류가 발생했습니다.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUserProfile();
+  }, [cookies.accessToken]);
 
   const toggleEdit = key => {
     setIsEditing(prev => ({
@@ -55,6 +69,14 @@ const MyPageProfile = () => {
       [name]: value,
     }));
   };
+
+  if (isLoading) {
+    return <div>로딩 중...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div className="mypage">
