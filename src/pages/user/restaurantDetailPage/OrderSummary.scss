@@ -25,6 +25,7 @@
   &__content-wrapper {
     border: 1px solid $borderColor;
     border-top: 0;
+    background-color: #f8f9fd;
   }
 
   &__content {
@@ -80,6 +81,8 @@
     padding: 12px;
     text-align: center;
     border: 1px solid $borderColor;
+    background-color: #469d95;
+    color: #fff;
   }
 }
 

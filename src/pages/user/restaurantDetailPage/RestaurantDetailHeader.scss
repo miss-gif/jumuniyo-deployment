@@ -1,6 +1,7 @@
 .restaurant-detail-page {
   &__menu {
     border: 1px solid $borderColor;
+    background-color: #f8f9fd;
   }
   &__menu-header {
     display: flex;
