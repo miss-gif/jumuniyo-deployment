@@ -11,15 +11,19 @@ function RootLayout() {
   const location = useLocation();
 
   // 위치 검색 사용 시 path 등록
-  const myPagePaths = ["/restaurants"];
-  // 음식점 카테고리 필터 시 사용 path 등록
+  const searchPaths = ["/restaurants"];
+  const mypagePaths = ["/mypage"];
+  // Register path used when filtering restaurant category
   const restaurantsPaths = ["/restaurants", "/restaurantdetail"];
 
   const isHomePage = location.pathname === "/";
-  const isMyPagePath = myPagePaths.some(path =>
+  const isSearchPath = searchPaths.some(path =>
     location.pathname.startsWith(path),
   );
   const isRestaurantsPaths = restaurantsPaths.some(path =>
+    location.pathname.startsWith(path),
+  );
+  const isMyPagePaths = mypagePaths.some(path =>
     location.pathname.startsWith(path),
   );
 
@@ -30,7 +34,7 @@ function RootLayout() {
       <Header />
 
       {isHomePage && <LocationSearch />}
-      {isMyPagePath && <LocationSearch />}
+      {isSearchPath && <LocationSearch />}
       {isRestaurantsPaths && <RestaurantsFilters />}
 
       <main className="main">
@@ -39,7 +43,7 @@ function RootLayout() {
         </div>
       </main>
 
-      <Footer />
+      {!isMyPagePaths && <Footer />}
     </>
   );
 }
