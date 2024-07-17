@@ -1,7 +1,8 @@
 import React from "react";
+import { kakaopay } from "../api/paymentModule";
 // import "../../public/images/icon_kakao.png";
 
-const Popup = ({ onClose, onPay, amount }) => {
+const Popup = ({ onClose, amount }) => {
   return (
     <div className="popup">
       <div className="pwrap">
@@ -15,7 +16,7 @@ const Popup = ({ onClose, onPay, amount }) => {
           <tbody>
             <tr>
               <td>
-                <a href="#" onClick={onPay}>
+                <a href="#" onClick={kakaopay(amount)}>
                   <img
                     src={process.env.PUBLIC_URL + "/images/icon_kakao.png"}
                     alt="Logo"

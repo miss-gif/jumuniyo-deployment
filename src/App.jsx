@@ -46,6 +46,7 @@ import LoginPage2 from "./pages/access/LoginPage2";
 import LoginPage3 from "./pages/access/LoginPage3";
 import Test2 from "./pages/Test2";
 import Test3 from "./pages/Test3";
+import Test4 from "./pages/Test4";
 
 // 사업자
 
@@ -113,6 +114,7 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/test2" element={<Test2 />} />
           <Route path="/test3" element={<Test3 />} />
+          <Route path="/test4" element={<Test4 />} />
         </Routes>
       </div>
     </>
