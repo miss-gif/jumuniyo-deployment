@@ -74,7 +74,7 @@ const PaymentSection = () => {
               </div>
             </div>
           </div>
-          <div className="payment-page__input-wrap">
+          <div className="payment-page__input-wrap none">
             <h3 className="payment-page__subtitle">할인방법 선택</h3>
             <div className="payment-page__coupon ">
               <label htmlFor="coupon">쿠폰</label>

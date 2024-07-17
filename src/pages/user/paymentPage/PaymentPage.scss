@@ -147,6 +147,9 @@ $bc: #f8f9fd;
   &__terms {
     padding: $padding-3;
     line-height: 1.8;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
     span {
       text-decoration: underline;
     }
@@ -196,4 +199,7 @@ $bc: #f8f9fd;
   font-weight: 400;
   color: #fff;
   background-color: #469d95;
+}
+
+.agreement-checkbox {
 }
