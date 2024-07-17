@@ -77,7 +77,7 @@ function App() {
             />
             <Route path="/payment" element={<PaymentPage />} />
             <Route path="/projectinfo" element={<ProjectInfo />} />
-            <Route path="/orderview" element={<MyPageOrderPage />} />
+            <Route path="/orderview/:id" element={<MyPageOrderPage />} />
           </Route>
 
           {/* 마이페이지 */}

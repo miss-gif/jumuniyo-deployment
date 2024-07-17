@@ -3,10 +3,12 @@ import { Checkbox } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom"; // react-router-dom의 useNavigate를 임포트합니다.
 
 const PaymentOrderSummary = () => {
   const [orderItems, setOrderItems] = useState([]);
   const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
+  const navigate = useNavigate(); // useNavigate를 사용하여 navigate 함수를 가져옵니다.
 
   const calculateTotal = () =>
     orderItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -34,8 +36,15 @@ const PaymentOrderSummary = () => {
           Authorization: `Bearer ${cookies.accessToken}`,
         },
       });
-      console.log(res);
+
+      if (res.data.statusCode === 1) {
+        alert(res.data.resultMsg);
+        navigate(`/orderview/${res.data.resultData}`);
+      } else {
+        alert("결제에 실패했습니다. 다시 시도해주세요.");
+      }
     } catch (error) {
+      alert("결제에 실패했습니다. 다시 시도해주세요.");
       console.log(error);
     }
   };
