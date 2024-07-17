@@ -45,7 +45,7 @@ const PaymentOrderSummaty = () => {
         </span>
         내용 확인하였으며 결제에 동의합니다.
       </p>
-      <button className="payment-page__button">결제하기</button>
+      <button className="payment-page__button payment-btn">결제하기</button>
     </div>
   );
 };

@@ -57,9 +57,6 @@ const PaymentSection = () => {
                 </h4>
                 <div className="payment-page__mobile-payment">
                   <button className="payment-page__button btn--active">
-                    네이버페이
-                  </button>
-                  <button className="payment-page__button btn--default">
                     카카오페이
                   </button>
                 </div>
