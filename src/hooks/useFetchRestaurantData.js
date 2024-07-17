@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchRestaurantlist } from "../api/fetchRestaurantlist";
+import { fetchRestaurantList } from "../api/fetchRestaurantlist";
 
 const useFetchRestaurantData = () => {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -9,7 +9,7 @@ const useFetchRestaurantData = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const data = await fetchRestaurantlist();
+      const data = await fetchRestaurantList();
       setRestaurantData(data); // 받아온 데이터를 바로 저장 (이미 list 형태)
     } catch (error) {
       setError(error);
