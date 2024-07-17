@@ -1,18 +1,16 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchUserProfile,
+  updateProfile,
+} from "../../../features/user/userSlice";
+// import { fetchUserProfile, updateProfile } from "../features/user/userSlice";
 
 const MyPageProfile = () => {
   const [cookies] = useCookies(["accessToken"]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const API_URL = "/api/user-info";
-  const TOKEN = {
-    headers: {
-      Authorization: `Bearer ${cookies.accessToken}`,
-    },
-  };
+  const dispatch = useDispatch();
+  const { profile, isLoading, error } = useSelector(state => state.user);
 
   const labels = {
     userId: "아이디",
@@ -22,15 +20,6 @@ const MyPageProfile = () => {
     mainAddr: "주소",
     userEmail: "이메일",
   };
-
-  const [profile, setProfile] = useState({
-    userId: "",
-    userName: "",
-    userNickname: "",
-    userPhone: "",
-    mainAddr: "",
-    userEmail: "",
-  });
 
   const [isEditing, setIsEditing] = useState({
     userId: false,
@@ -42,30 +31,10 @@ const MyPageProfile = () => {
   });
 
   useEffect(() => {
-    const fetchUserProfile = async () => {
-      try {
-        const res = await axios.get(API_URL, TOKEN);
-        if (res.data.statusCode === 1) {
-          setProfile({
-            userId: res.data.resultData.userId,
-            userName: res.data.resultData.userName,
-            userNickname: res.data.resultData.userNickname,
-            userPhone: res.data.resultData.userPhone,
-            mainAddr: res.data.resultData.mainAddr || "",
-            userEmail: res.data.resultData.userEmail || "",
-          });
-        } else {
-          setError(res.data.resultMsg);
-        }
-      } catch (error) {
-        setError("정보를 가져오는 중 오류가 발생했습니다.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchUserProfile();
-  }, [cookies.accessToken]);
+    if (cookies.accessToken) {
+      dispatch(fetchUserProfile(cookies.accessToken));
+    }
+  }, [cookies.accessToken, dispatch]);
 
   const toggleEdit = key => {
     setIsEditing(prev => ({
@@ -76,10 +45,7 @@ const MyPageProfile = () => {
 
   const handleChange = e => {
     const { name, value } = e.target;
-    setProfile(prevProfile => ({
-      ...prevProfile,
-      [name]: value,
-    }));
+    dispatch(updateProfile({ [name]: value }));
   };
 
   if (isLoading) {
