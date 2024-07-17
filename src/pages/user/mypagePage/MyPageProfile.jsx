@@ -20,6 +20,7 @@ const MyPageProfile = () => {
     userName: "이름",
     userPhone: "전화번호",
     mainAddr: "주소",
+    userEmail: "이메일",
   };
 
   const [profile, setProfile] = useState({
@@ -28,6 +29,7 @@ const MyPageProfile = () => {
     userNickname: "",
     userPhone: "",
     mainAddr: "",
+    userEmail: "",
   });
 
   const [isEditing, setIsEditing] = useState({
@@ -36,6 +38,7 @@ const MyPageProfile = () => {
     userName: false,
     userPhone: false,
     mainAddr: false,
+    userEmail: false,
   });
 
   useEffect(() => {
@@ -49,6 +52,7 @@ const MyPageProfile = () => {
             userNickname: res.data.resultData.userNickname,
             userPhone: res.data.resultData.userPhone,
             mainAddr: res.data.resultData.mainAddr || "",
+            userEmail: res.data.resultData.userEmail || "",
           });
         } else {
           setError(res.data.resultMsg);
@@ -97,7 +101,9 @@ const MyPageProfile = () => {
         <div className="mypage__info">
           {Object.keys(profile).map(key => (
             <div key={key} className="mypage__info-item">
-              <p className="mypage__info-label">{labels[key]}</p>
+              <p className="mypage__info-label">
+                {labels[key]}({key})
+              </p>
               {isEditing[key] ? (
                 <input
                   className="mypage__info-input"
