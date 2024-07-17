@@ -1,10 +1,8 @@
 import React from "react";
-import OrderPreview from "../../../components/common/OrderPreview";
 
 const MyPageOrderPage = () => {
   return (
     <div className="mypage-order">
-      <OrderPreview />
       <div className="mypage-order-content">
         <h2 className="mypage-order__title">주문완료</h2>
         <div className="mypage-order__contents">

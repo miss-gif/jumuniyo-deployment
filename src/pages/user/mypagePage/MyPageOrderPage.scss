@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  // background-color: #fff;
 
   &__title {
     color: $white;
@@ -88,4 +89,9 @@
   .mypage-order__label {
     max-width: 6.25rem;
   }
+}
+
+.mypage-order__contents,
+.mypage-order__section {
+  background-color: #f8f9fd;
 }
