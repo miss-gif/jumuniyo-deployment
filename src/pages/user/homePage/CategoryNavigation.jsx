@@ -8,8 +8,8 @@ const CategoryNavigation = () => {
 
   const navigate = useNavigate();
 
-  const a = () => {
-    navigate("/test");
+  const onClickSearch = () => {
+    navigate("/restaurants");
   };
 
   if (loading) return <p>로딩 중...</p>;
@@ -20,7 +20,7 @@ const CategoryNavigation = () => {
       <h2 className="hidden">카테고리 선택 메뉴</h2>
       <section className="category">
         <ul className="category__list">
-          <li className="category__item border-set bc" onClick={a}>
+          <li className="category__item border-set bc" onClick={onClickSearch}>
             <p>전체보기</p>
           </li>
           {categories.map(category => (
