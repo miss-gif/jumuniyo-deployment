@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import MypageHeader from "./MypageHeader";
-import Footer from "../../../components/layout/Footer";
+import FooterMini from "../../../components/common/FooterMini";
 
 const MyPageLayout = () => {
   return (
@@ -12,7 +12,7 @@ const MyPageLayout = () => {
           <div className="mypage-cover">
             <Outlet />
           </div>
-          <Footer />
+          <FooterMini />
         </main>
       </div>
     </div>
