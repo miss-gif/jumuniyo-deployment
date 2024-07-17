@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PaymentSelect from "../../../components/common/PaymentSelect";
 
 const PaymentSection = () => {
   const [address, setAddress] = useState("");
@@ -62,32 +63,7 @@ const PaymentSection = () => {
               ></textarea>
             </div>
           </div>
-          <div className="payment-page__input-wrap">
-            <h3 className="payment-page__subtitle">결제수단 선택</h3>
-            <div className="payment-page__payment-method">
-              <div className="payment-wrap">
-                <h4>
-                  주문이요<span>웹에서 미리 결제</span>
-                </h4>
-                <div className="payment-page__mobile-payment">
-                  <button className="payment-page__button btn--active">
-                    카카오페이
-                  </button>
-                </div>
-              </div>
-              <div className="payment-wrap">
-                <h4>현장결제</h4>
-                <div className="payment-page__onsite-payment">
-                  <button className="payment-page__button btn--default">
-                    신용카드
-                  </button>
-                  <button className="payment-page__button btn--default">
-                    현금
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <PaymentSelect />
           <div className="payment-page__input-wrap none">
             <h3 className="payment-page__subtitle">할인방법 선택</h3>
             <div className="payment-page__coupon ">
