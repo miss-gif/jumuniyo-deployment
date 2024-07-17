@@ -14,6 +14,14 @@ const MyPageProfile = () => {
     },
   };
 
+  const labels = {
+    userId: "아이디",
+    userNickname: "닉네임",
+    userName: "이름",
+    userPhone: "전화번호",
+    mainAddr: "주소",
+  };
+
   const [profile, setProfile] = useState({
     userId: "",
     userName: "",
@@ -89,7 +97,7 @@ const MyPageProfile = () => {
         <div className="mypage__info">
           {Object.keys(profile).map(key => (
             <div key={key} className="mypage__info-item">
-              <p className="mypage__info-label">{key}</p>
+              <p className="mypage__info-label">{labels[key]}</p>
               {isEditing[key] ? (
                 <input
                   className="mypage__info-input"
