@@ -2,7 +2,7 @@ import React from "react";
 import OwnerHeader from "./OwnerHeader";
 import { Outlet } from "react-router-dom";
 import OwnerNav from "./OwnerNav";
-import Footer from "./Footer";
+import FooterMini from "../common/FooterMini";
 
 const OwnerLayout = () => {
   return (
@@ -10,11 +10,11 @@ const OwnerLayout = () => {
       <OwnerHeader />
       <div className="owner-content">
         <OwnerNav />
-        <div className="main-wrap">
-          <main className="main">
+        <div className="mypage-content">
+          <main className="mypage-cover">
             <Outlet />
           </main>
-          <Footer />
+          <FooterMini />
         </div>
       </div>
     </div>
