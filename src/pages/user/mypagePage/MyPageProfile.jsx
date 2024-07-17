@@ -64,7 +64,7 @@ const MyPageProfile = () => {
           </div>
         </div>
         <div className="mypage__info">
-          {Object.keys(profile).map(key => (
+          {Object.keys(labels).map(key => (
             <div key={key} className="mypage__info-item">
               <p className="mypage__info-label">
                 {labels[key]}({key})
@@ -78,7 +78,11 @@ const MyPageProfile = () => {
                   onChange={handleChange}
                 />
               ) : (
-                <p className="mypage__info-value">{profile[key]}</p>
+                <p className="mypage__info-value">
+                  {key === "mainAddr"
+                    ? `${profile.mainAddr.addr1} ${profile.mainAddr.addr2}`
+                    : profile[key]}
+                </p>
               )}
               <button
                 className="mypage__edit-button"
