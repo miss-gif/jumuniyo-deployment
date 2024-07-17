@@ -23,7 +23,7 @@ export const kakaopay = amount => {
         msg += "// 구매자 이름 : " + data.buyer_name;
 
         axios
-          .post("/paySuccess", {
+          .post("/api/order/", {
             ID: data.buyer_email,
             amount: data.paid_amount,
           })

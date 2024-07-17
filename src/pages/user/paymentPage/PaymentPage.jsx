@@ -1,12 +1,12 @@
 import React from "react";
-import PaymentOrderSummaty from "./PaymentOrderSummaty";
+import PaymentOrderSummary from "./PaymentOrderSummary";
 import PaymentSection from "./PaymentSection";
 
 const PaymentPage = () => {
   return (
     <div className="payment-page">
       <PaymentSection />
-      <PaymentOrderSummaty />
+      <PaymentOrderSummary />
     </div>
   );
 };

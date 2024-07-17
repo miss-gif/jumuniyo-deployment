@@ -1,19 +1,44 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Checkbox } from "@mui/material";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 
-const PaymentOrderSummaty = () => {
+const PaymentOrderSummary = () => {
   const [orderItems, setOrderItems] = useState([]);
+  const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
 
   const calculateTotal = () =>
     orderItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   useEffect(() => {
-    // 세션에서 orderItems 값 가져오기 (여기서는 localStorage에서 가져오는 것으로 가정)
     const storedOrderItems = sessionStorage.getItem("orderItems");
     if (storedOrderItems) {
       setOrderItems(JSON.parse(storedOrderItems));
     }
   }, []);
+
+  const handlePayment = async () => {
+    const data = {
+      order_res_pk: 1,
+      order_request: "요청사항",
+      payment_method: "현장결제",
+      order_phone: "전화번호",
+      order_address: "배달주소",
+      menu_pk: [1],
+    };
+
+    try {
+      const res = await axios.post("/api/order/", data, {
+        headers: {
+          Authorization: `Bearer ${cookies.accessToken}`,
+        },
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="payment-page__order-summary">
@@ -33,7 +58,6 @@ const PaymentOrderSummaty = () => {
           ))}
         </ul>
 
-        {/* 결제 */}
         <div className="payment-page__total-amount">
           <p>총 결제 금액</p>
           <p>{calculateTotal()}원</p>
@@ -49,9 +73,14 @@ const PaymentOrderSummaty = () => {
           <Checkbox sx={{ padding: 0 }} />
         </label>
       </p>
-      <button className="payment-page__button payment-btn">결제하기</button>
+      <button
+        className="payment-page__button payment-btn"
+        onClick={handlePayment}
+      >
+        결제하기
+      </button>
     </div>
   );
 };
 
-export default PaymentOrderSummaty;
+export default PaymentOrderSummary;
