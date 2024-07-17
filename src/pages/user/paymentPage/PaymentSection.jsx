@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const PaymentSection = () => {
+  const [address, setAddress] = useState("");
+
+  useEffect(() => {
+    const locationData = localStorage.getItem("locationData");
+    if (locationData) {
+      const parsedLocationData = JSON.parse(locationData);
+      if (parsedLocationData.address) {
+        setAddress(parsedLocationData.address);
+      }
+    }
+  }, []); // 빈 배열을 두 번째 인자로 주어 컴포넌트가 마운트될 때만 useEffect가 실행되도록 합니다.
+
   return (
     <div className="payment-page__section">
       <h2 className="payment-page__title">결제하기</h2>
@@ -15,6 +27,8 @@ const PaymentSection = () => {
                   type="text"
                   id="address"
                   className="payment-page__input"
+                  value={address}
+                  readOnly
                 />
               </div>
               <div>

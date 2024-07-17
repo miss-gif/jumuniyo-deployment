@@ -66,6 +66,16 @@ const GoogleMaps = ({ latitude, longitude }) => {
               if (status === "OK" && results[0]) {
                 setValue(results[0]);
                 setInputValue(results[0].formatted_address);
+
+                // 주소를 로컬스토리지에 저장
+                localStorage.setItem(
+                  "locationData",
+                  JSON.stringify({
+                    latitude: latlng.lat,
+                    longitude: latlng.lng,
+                    address: results[0].formatted_address,
+                  }),
+                );
               } else {
                 console.error("지오코딩에 실패했습니다.");
               }
@@ -151,10 +161,14 @@ const GoogleMaps = ({ latitude, longitude }) => {
             console.log("Latitude:", latitude);
             console.log("Longitude:", longitude);
 
-            // 세션에 위치 데이터 저장
+            // 로컬스토리지에 위치 데이터 저장
             localStorage.setItem(
               "locationData",
-              JSON.stringify({ latitude, longitude }),
+              JSON.stringify({
+                latitude,
+                longitude,
+                address: place.formatted_address,
+              }),
             );
           }
         },
