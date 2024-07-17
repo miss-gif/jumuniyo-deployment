@@ -19,7 +19,7 @@ const useLogin = () => {
     try {
       const response = await loginUser(username, password);
       console.log("로그인 응답:", response); // 응답 로그 출력
-      if (response.statusCode === 2) {
+      if (response.statusCode === 1) {
         const { accessToken, refreshToken } = response.resultData;
         setCookie("accessToken", accessToken, { path: "/" });
         setCookie("refresh-token", refreshToken, { path: "/" });
