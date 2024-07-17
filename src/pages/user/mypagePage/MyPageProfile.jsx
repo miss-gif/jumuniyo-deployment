@@ -5,7 +5,6 @@ import {
   fetchUserProfile,
   updateProfile,
 } from "../../../features/user/userSlice";
-// import { fetchUserProfile, updateProfile } from "../features/user/userSlice";
 
 const MyPageProfile = () => {
   const [cookies] = useCookies(["accessToken"]);

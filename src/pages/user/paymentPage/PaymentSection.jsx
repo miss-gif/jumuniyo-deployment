@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux"; // Redux에서 상태를 가져오기 위해 추가
 import PaymentSelect from "../../../components/common/PaymentSelect";
 
 const PaymentSection = () => {
   const [address, setAddress] = useState("");
+  const [localPhone, setLocalPhone] = useState(""); // 로컬 상태 추가
+
+  // Redux에서 전화번호 값 가져오기
+  const phone = useSelector(state => state.user.profile.userPhone);
 
   useEffect(() => {
+    // Redux에서 전화번호를 로컬 상태에 초기화
+    setLocalPhone(phone);
+
     const locationData = localStorage.getItem("locationData");
     if (locationData) {
       const parsedLocationData = JSON.parse(locationData);
@@ -12,7 +20,12 @@ const PaymentSection = () => {
         setAddress(parsedLocationData.address);
       }
     }
-  }, []); // 빈 배열을 두 번째 인자로 주어 컴포넌트가 마운트될 때만 useEffect가 실행되도록 합니다.
+  }, [phone]); // phone이 변경될 때마다 로컬 상태를 업데이트
+
+  // 전화번호 입력 변화 핸들러
+  const handlePhoneChange = e => {
+    setLocalPhone(e.target.value); // 로컬 상태 업데이트
+  };
 
   return (
     <div className="payment-page__section">
@@ -33,10 +46,10 @@ const PaymentSection = () => {
                 />
               </div>
               <div>
-                <label htmlFor="address"></label>
+                <label htmlFor="detail-address"></label>
                 <input
                   type="text"
-                  id="address"
+                  id="detail-address"
                   className="payment-page__input"
                   placeholder="(필수) 상세주소 입력"
                 />
@@ -48,6 +61,8 @@ const PaymentSection = () => {
                   id="phone"
                   className="payment-page__input"
                   placeholder="(필수) 휴대전화 번호 입력"
+                  value={localPhone} // 로컬 상태 사용
+                  onChange={handlePhoneChange} // onChange 핸들러 추가
                 />
               </div>
             </div>
