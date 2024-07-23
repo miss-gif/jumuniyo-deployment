@@ -1,6 +1,7 @@
 .access-layout {
   @include flex-center;
   flex-direction: column;
-  height: 85vh;
   gap: 32px;
+  background-color: #fff;
+  height: 100vh;
 }

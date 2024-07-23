@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
+import { Logo } from "../../components/common/Logo";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("wyfmel1");
@@ -23,6 +24,9 @@ const LoginPage = () => {
       </div>
 
       <div className="login-page__right">
+        <h1>
+          <Logo />
+        </h1>
         <div className="login">
           <form className="login__form" onSubmit={handleLogin}>
             <div className="login__form-group">
