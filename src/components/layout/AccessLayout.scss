@@ -1,7 +1,10 @@
 .access-layout {
-  @include flex-center;
+  display: flex;
   flex-direction: column;
   gap: 32px;
   background-color: #fff;
   height: 100vh;
+  @include tablet {
+    display: block;
+  }
 }
