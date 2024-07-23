@@ -6,7 +6,7 @@ const AccessLayout = () => {
   return (
     <div className="access-layout">
       <AccessHeader />
-      <div className="mobile-inner">
+      <div className="inner">
         <Outlet />
       </div>
     </div>

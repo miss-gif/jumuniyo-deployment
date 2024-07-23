@@ -1,3 +1,15 @@
+.login-page {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  &__left {
+    width: 50%;
+  }
+  &__right {
+    width: 50%;
+  }
+}
+
 .login {
   display: flex;
   flex-direction: column;
