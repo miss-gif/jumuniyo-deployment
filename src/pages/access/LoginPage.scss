@@ -57,6 +57,9 @@
     &::before {
       content: "|";
       padding: 0 32px;
+      @include tablet {
+        padding: 0 8px;
+      }
     }
     &:first-child::before {
       content: "";
