@@ -11,7 +11,7 @@ const useLogin = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [cookies, setCookie] = useCookies(["accessToken", "refreshToken"]);
+  const [cookies, setCookie] = useCookies(["refreshToken"]);
 
   const login = async (username, password) => {
     setLoading(true);
@@ -20,10 +20,27 @@ const useLogin = () => {
       const response = await loginUser(username, password);
       console.log("로그인 응답:", response); // 응답 로그 출력
       if (response.statusCode === 1) {
-        const { accessToken, refreshToken } = response.resultData;
-        setCookie("accessToken", accessToken, { path: "/" });
-        setCookie("refresh-token", refreshToken, { path: "/" });
-        dispatch(setTokens({ accessToken, refreshToken }));
+        const {
+          accessToken,
+          refreshToken,
+          userNickname,
+          mainAddr,
+          userPhone,
+          userRole,
+          tokenMaxAge,
+        } = response.resultData;
+
+        setCookie("refreshToken", refreshToken, { path: "/" });
+        dispatch(
+          setTokens({
+            accessToken,
+            userNickname,
+            mainAddr,
+            userPhone,
+            userRole,
+            tokenMaxAge,
+          }),
+        );
         setLoading(false); // 상태 업데이트
         navigate("/"); // 페이지 이동
         console.log("로그인 성공");
