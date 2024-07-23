@@ -5,8 +5,8 @@ import { Outlet } from "react-router-dom";
 const AccessLayout = () => {
   return (
     <div className="access-layout">
+      <AccessHeader />
       <div className="mobile-inner">
-        <AccessHeader />
         <Outlet />
       </div>
     </div>
