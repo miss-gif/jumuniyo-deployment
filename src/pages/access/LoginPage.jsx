@@ -21,13 +21,8 @@ const LoginPage = () => {
           alt="signup 이미지"
         />
       </div>
+
       <div className="login-page__right">
-        <a href="login2" className="access-header-title">
-          사장님
-        </a>
-        <a href="login3" className="access-header-title">
-          관리자
-        </a>
         <div className="login">
           <form className="login__form" onSubmit={handleLogin}>
             <div className="login__form-group">
